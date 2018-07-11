@@ -30,4 +30,5 @@ namespace dataBase
 	void addToDatabase();
 	void showDatabase();
     void findStudent(int);
+    void sortDatabase();
 }

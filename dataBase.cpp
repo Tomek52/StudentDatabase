@@ -76,3 +76,8 @@ void dataBase::findStudent(int index)
         }
     }
 }
+
+void dataBase::sortDatabase()
+{
+    std::sort(data.begin(), data.end(), [](Student& one, Student& two){return one.getIndex() < two.getIndex();});
+}

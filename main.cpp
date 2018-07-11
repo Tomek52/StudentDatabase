@@ -3,7 +3,7 @@
 int main()
 {
     int state=0;
-    while(state<4)
+    while(state<5)
     {
         switch (state)
         {
@@ -13,6 +13,7 @@ int main()
                     std::cout<<"To add student, press 1"<<std::endl;
                     std::cout<<"To show database, press 2"<<std::endl;
                     std::cout<<"To remove student, press 3"<<std::endl;
+                    std::cout<<"To sort database by index, press 4"<<std::endl;
                     std::cout<<"To exit program, press other number"<<std::endl;
                     std::cin>>state;
                     std::cout<<std::endl;
@@ -44,6 +45,14 @@ int main()
                     state=0;
                     std::cout<<std::endl;
                     break;
+                }
+            case 4:
+                {
+                    std::cout<<std::endl;
+                    dataBase::sortDatabase();
+                    state=0;
+                    break;
+                    std::cout<<std::endl;
                 }
         }
     }
