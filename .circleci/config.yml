@@ -5,4 +5,8 @@ jobs:
         - image: gcc:6
         steps:
         - checkout
-        - run: make StudentDatabase
+        - run:
+            mkdir build
+            cd build
+            cmake ..
+            make
