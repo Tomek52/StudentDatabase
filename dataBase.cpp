@@ -2,8 +2,15 @@
 
 std::vector<Student> data;
 
-Student::Student(int index_, std::string firstName_, std::string lastName_)
-	:index(index_), firstName(firstName_), lastName(lastName_) {}
+Student::Student(int index_,
+                 std::string firstName_,
+                 std::string lastName_)
+	: index(index_)
+    , firstName(firstName_)
+    , lastName(lastName_)
+{
+    std::cout<<"added student to database"<<std::endl;
+}
 
 Student::~Student() {}
 
