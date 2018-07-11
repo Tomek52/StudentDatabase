@@ -1,7 +1,11 @@
-#include <iostream>
+#include "dataBase.h"
 
 int main()
 {
-    std::cout<<"Hello world"<<std::endl;
-    return 0;
+	dataBase::addToDatabase();
+	dataBase::showDatabase();
+
+
+	system("Pause");
+	return 0;
 }
