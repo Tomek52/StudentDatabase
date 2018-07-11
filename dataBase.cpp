@@ -8,9 +8,7 @@ Student::Student(int index_,
 	: index(index_)
     , firstName(firstName_)
     , lastName(lastName_)
-{
-    std::cout<<"added student to database"<<std::endl;
-}
+{}
 
 Student::~Student() {}
 
@@ -67,5 +65,14 @@ void dataBase::showDatabase()
 	}
 }
 
-
-
+void dataBase::findStudent(int index)
+{
+    for (auto i = data.begin(); i != data.end(); i++)
+    {
+        if(i->getIndex()==index) 
+        {
+            data.erase(i);
+            break;
+        }
+    }
+}

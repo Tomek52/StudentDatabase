@@ -14,6 +14,12 @@ private:
 public:
 	Student(int index_ = 123456, std::string firstName_= "Jan", std::string lastName_ = "Kowalski");
 	~Student();
+
+    int getIndex()
+    {
+        return index;
+    }
+
 	friend std::ostream& operator<<(std::ostream& os, const Student& s);
 	friend std::istream& operator>>(std::istream& is, Student& s);
 	void showStudent();
@@ -23,4 +29,5 @@ namespace dataBase
 {
 	void addToDatabase();
 	void showDatabase();
+    void findStudent(int);
 }
