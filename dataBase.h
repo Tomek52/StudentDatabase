@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <fstream>
 
 
 class Student
@@ -22,6 +23,7 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, const Student& s);
 	friend std::istream& operator>>(std::istream& is, Student& s);
+	friend void addToExternalFile();
 	void showStudent();
 };
 
@@ -29,6 +31,8 @@ namespace dataBase
 {
 	void addToDatabase();
 	void showDatabase();
-    void findStudent(int);
+    void removeStudent(const int&);
     void sortDatabase();
+	void menu();
+	void loadFromExternalFile();
 }
