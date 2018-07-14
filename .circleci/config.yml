@@ -7,3 +7,5 @@ jobs:
         - checkout
         - run:
             sudo apt-get install cmake
+            cmake
+            make
