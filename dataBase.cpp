@@ -35,9 +35,9 @@ std::istream& operator>>(std::istream& is, Student& s)
     do
     {
         std::cout << "Input index: ";
-	    std::cin.clear();
-	    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	    std::cin >> s.index;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin >> s.index;
 	if (!std::cin)
 	{
 	    std::cout << std::endl;
@@ -49,9 +49,9 @@ std::istream& operator>>(std::istream& is, Student& s)
 	    checkIndex = s.index / 100000;
 	    if (checkIndex < 1.0 || checkIndex > 9.9)
 	    {
-	        std::cout << "Incorrect index. Your index must contains 6 numbers !" << std::endl; //standard pwr index
-		    std::cout << "First number cannot be 0 !" << std::endl;
-		    correctIndex = false;
+            std::cout << "Incorrect index. Your index must contains 6 numbers !" << std::endl; //standard pwr index
+            std::cout << "First number cannot be 0 !" << std::endl;
+            correctIndex = false;
 	    }
 	    else
 	    {
@@ -128,8 +128,8 @@ void dataBase::addToExternalFile()
     for (auto i = data.begin(); i != data.end(); i++)
     {
         outFile << i->index << std::endl;
-	    outFile << i->firstName << std::endl;
-	    outFile << i->lastName << std::endl;
+        outFile << i->firstName << std::endl;
+        outFile << i->lastName << std::endl;
     }
     outFile.close();
     std::cout << "Status: load complete" << std::endl;
