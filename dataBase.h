@@ -5,34 +5,31 @@
 #include <algorithm>
 #include <fstream>
 
+namespace dataBase
+{
+    void addToDatabase();
+    void showDatabase();
+    void removeStudent(const int&);
+    void sortDatabase();
+    void menu();
+    void addToExternalFile();
+    void loadFromExternalFile();
+}
 
 class Student
 {
 private:
-	int index;
+        int index;
 	std::string firstName;
 	std::string lastName;
 public:
-	Student(int index_ = 123456, std::string firstName_= "Jan", std::string lastName_ = "Kowalski");
+	Student();
+	Student(int index_, std::string firstName_, std::string lastName_ );
 	~Student();
-
-    int getIndex()
-    {
-        return index;
-    }
-
+	int getIndex() const;
 	friend std::ostream& operator<<(std::ostream& os, const Student& s);
 	friend std::istream& operator>>(std::istream& is, Student& s);
-	friend void addToExternalFile();
-	void showStudent();
+	friend void dataBase::addToExternalFile();
+	void showStudent() const;
 };
 
-namespace dataBase
-{
-	void addToDatabase();
-	void showDatabase();
-    void removeStudent(const int&);
-    void sortDatabase();
-	void menu();
-	void loadFromExternalFile();
-}
