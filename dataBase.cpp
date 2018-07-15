@@ -9,7 +9,7 @@ Student::Student(int index_,
                 std::string lastName_)
 		: index(index_)
 		, firstName(firstName_)
-		, lastName(lastName_)
+	 	, lastName(lastName_)
 {}
 
 Student::~Student() {}

@@ -19,7 +19,7 @@ namespace dataBase
 class Student
 {
 private:
-	int index;
+        int index;
 	std::string firstName;
 	std::string lastName;
 public:

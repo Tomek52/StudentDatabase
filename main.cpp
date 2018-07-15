@@ -9,7 +9,7 @@ int main()
         {
             case 0: 
                 {
-		dataBase::menu();
+	 	dataBase::menu();
 		std::cin >> state;
 		std::cout << std::endl;
                 break;
