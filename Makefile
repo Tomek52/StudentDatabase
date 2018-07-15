@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -Wall -Wpedantic -Wextra -Werror
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
-TARGET = output
+TARGET = StudentDatabase
 
 .PHONY: all
 all: $(TARGET)
