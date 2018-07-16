@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+#include "Database.hpp"
+
 class Student
 {
 private:

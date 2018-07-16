@@ -13,7 +13,7 @@ class dataBase
         void showDatabase();
         void removeStudent(const int&);
         void sortDatabase();
-        void menu();
+        void menu() const;
         void addToExternalFile();
         void loadFromExternalFile();
 };

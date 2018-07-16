@@ -1,4 +1,4 @@
-#include "dataBase.hpp"
+#include "Database.hpp"
 
 std::vector<Student> data;
 
@@ -36,7 +36,7 @@ void dataBase::sortDatabase()
     std::cout << "Status: sorting completed" << std::endl;
 }
 
-void dataBase::menu()
+void dataBase::menu() const
 {
     std::cout << std::endl;
     std::cout << "~~~~Student's database~~~~" << std::endl;
@@ -51,6 +51,7 @@ void dataBase::menu()
 }
 
 void dataBase::addToExternalFile()
+try
 {
     std::ofstream outFile("StudentsDatabase.txt", std::ios_base::out | std::ios_base::ate | std::ios_base::app);
     for (auto i = data.begin(); i != data.end(); i++)
@@ -62,8 +63,13 @@ void dataBase::addToExternalFile()
     outFile.close();
     std::cout << "Status: load complete" << std::endl;
 }
+catch(...)
+{
+    std::cout<<"Error"<<std::endl;
+}
 
 void dataBase::loadFromExternalFile()
+try
 {
     std::string textFromFile;
     std::ifstream inFile("StudentsDatabase.txt");
@@ -80,4 +86,8 @@ void dataBase::loadFromExternalFile()
     {
         std::cout << "Error: cannot open the file" << std::endl;
     }
+}
+catch(...)
+{
+    std::cout<<"Error"<<std::endl;
 }
