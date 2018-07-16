@@ -1,5 +1,4 @@
-#include "dataBase.h"
-#include "Student.hpp"
+#include "dataBase.hpp"
 
 std::vector<Student> data;
 
