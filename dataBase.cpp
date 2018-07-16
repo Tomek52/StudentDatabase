@@ -3,61 +3,6 @@
 
 std::vector<Student> data;
 
-std::ostream& operator<<(std::ostream& os, const Student& s)
-{
-    os << "Index: " << s.index << std::endl;
-    os << "First name: " << s.firstName << std::endl;
-    os << "Last name: " << s.lastName << std::endl;
-    return os;
-}
-
-std::istream& operator>>(std::istream& is, Student& s)
-{
-    double checkIndex;
-    bool correctIndex = false;
-    std::cout << "Input  student's data" << std::endl;
-    do
-    {
-        std::cout << "Input index: ";
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin >> s.index;
-	if (!std::cin)
-	{
-	    std::cout << std::endl;
-	    std::cout << "Index can contains only numbers !" << std::endl;
-	    correctIndex = false;
-	}
-	else
-	{
-	    checkIndex = s.index / 100000;
-	    if (checkIndex < 1.0 || checkIndex > 9.9)
-	    {
-            std::cout << "Incorrect index. Your index must contains 6 numbers !" << std::endl; //standard pwr index
-            std::cout << "First number cannot be 0 !" << std::endl;
-            correctIndex = false;
-	    }
-	    else
-	    {
-	        correctIndex = true;
-	    }
-	}
-	} while (correctIndex == false);
-
-	std::cout << "Input First name: ";
-	std::cin >> s.firstName;
-	std::cout << "Input Last name: ";
-	std::cin >> s.lastName;
-	return is;
-}
-
-void Student::showStudent() const
-{
-    std::cout << "Index: " << this->index << std::endl;
-    std::cout << "First name: " << this->firstName << std::endl;
-    std::cout << "Last name: " << this->lastName << std::endl;
-}
-
 void dataBase::addToDatabase()
 {
     Student temporaryStudent;
@@ -111,9 +56,9 @@ void dataBase::addToExternalFile()
     std::ofstream outFile("StudentsDatabase.txt", std::ios_base::out | std::ios_base::ate | std::ios_base::app);
     for (auto i = data.begin(); i != data.end(); i++)
     {
-        outFile << i->index << std::endl;
-        outFile << i->firstName << std::endl;
-        outFile << i->lastName << std::endl;
+        outFile << i->getIndex() << std::endl;
+        outFile << i->getFirstName() << std::endl;
+        outFile << i->getLastName() << std::endl;
     }
     outFile.close();
     std::cout << "Status: load complete" << std::endl;

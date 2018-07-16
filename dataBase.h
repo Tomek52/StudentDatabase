@@ -5,8 +5,9 @@
 #include <algorithm>
 #include <fstream>
 
-namespace dataBase
+class dataBase
 {
+    public:
     void addToDatabase();
     void showDatabase();
     void removeStudent(const int&);
@@ -14,4 +15,4 @@ namespace dataBase
     void menu();
     void addToExternalFile();
     void loadFromExternalFile();
-}
+};

@@ -2,6 +2,7 @@
 
 int main()
 {
+    dataBase dataBase;
     int state=0;
     while(state<7)
     {
@@ -9,7 +10,7 @@ int main()
         {
             case 0: 
                 {
-	 	dataBase::menu();
+	 	dataBase.menu();
 		std::cin >> state;
 		std::cout << std::endl;
                 break;
@@ -17,7 +18,7 @@ int main()
             case 1:
                 {
 		std::cout << std::endl;
-		dataBase::addToDatabase();
+		dataBase.addToDatabase();
 		state = 0;
 		std::cout << std::endl;
                 break;
@@ -25,7 +26,7 @@ int main()
             case 2:
                 {
 		std::cout << std::endl;
-		dataBase::showDatabase();
+		dataBase.showDatabase();
 		state = 0;
 		std::cout << std::endl;
                 break;
@@ -36,7 +37,7 @@ int main()
 		int studentIndexToRemove;
 		std::cout << "Write index: ------\b\b\b\b\b\b";
 		std::cin >> studentIndexToRemove;
-		dataBase::removeStudent(studentIndexToRemove);
+		dataBase.removeStudent(studentIndexToRemove);
 		state = 0;
 		std::cout << std::endl;
                 break;
@@ -44,21 +45,21 @@ int main()
             case 4:
                 {
 		std::cout << std::endl;
-		dataBase::sortDatabase();
+		dataBase.sortDatabase();
 		state = 0;
 		std::cout << std::endl;
                 break; 
                 }
 	    case 5:
 		{
-		dataBase::addToExternalFile();
+		dataBase.addToExternalFile();
 		state = 0;
 		std::cout << std::endl;
 		break;
 		}
 	    case 6:
 		{
-		dataBase::loadFromExternalFile();
+		dataBase.loadFromExternalFile();
 		state = 0;
 		std::cout << std::endl;
 		break;
