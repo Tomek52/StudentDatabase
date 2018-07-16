@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "dataBase.hpp"
+#include "Database.hpp"
 
 class Student
 {
