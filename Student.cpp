@@ -29,17 +29,17 @@ std::string Student::getLastName() const
 
 void Student::setIndex(int index)
 {
-    index_=index;
+    this->index_=index;
 }
 
 void Student::setFirstName(std::string firstName)
 {
-    firstName_=firstName;
+    this->firstName_=firstName;
 }
 
 void Student::setLastName(std::string lastName)
 {
-    lastName_=lastName;
+    this->lastName_=lastName;
 }
 
 void Student::showStudent() const
@@ -48,8 +48,6 @@ void Student::showStudent() const
     std::cout << "First name: " << this->firstName_ << std::endl;
     std::cout << "Last name: " << this->lastName_ << std::endl;
 }
-
-
 
 std::ostream& operator<<(std::ostream& os, const Student& s)
 {
@@ -91,7 +89,6 @@ std::istream& operator>>(std::istream& is, Student& s)
 	    }
 	}
 	} while (correctIndex == false);
-
 	std::cout << "Input First name: ";
 	std::cin >> s.firstName_;
 	std::cout << "Input Last name: ";
