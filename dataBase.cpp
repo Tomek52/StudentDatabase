@@ -1,23 +1,7 @@
 #include "dataBase.h"
+#include "Student.hpp"
 
 std::vector<Student> data;
-
-Student::Student() {}
-
-Student::Student(int index_,
-                std::string firstName_,
-                std::string lastName_)
-		: index(index_)
-		, firstName(firstName_)
-	 	, lastName(lastName_)
-{}
-
-Student::~Student() {}
-
-int Student::getIndex() const
-{
-    return this->index;
-}
 
 std::ostream& operator<<(std::ostream& os, const Student& s)
 {
