@@ -2,13 +2,6 @@
 
 std::vector<Student> data;
 
-void dataBase::addToDatabase()
-{
-    Student temporaryStudent;
-    std::cin >> temporaryStudent;
-    data.push_back(temporaryStudent);
-}
-
 void dataBase::addToDatabase(Student& s)
 {
     data.push_back(s);

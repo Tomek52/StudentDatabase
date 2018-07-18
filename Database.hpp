@@ -9,7 +9,6 @@
 class dataBase
 {
 public:
-    void addToDatabase(); //dynamic adding students
     void addToDatabase(Student& s);  //static adding students
     void showDatabase();
     void removeStudent(const int&);
