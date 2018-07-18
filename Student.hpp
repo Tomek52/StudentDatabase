@@ -18,5 +18,4 @@ public:
     void setFirstName(std::string);
     void setLastName(std::string);
     void showStudent() const;
-    friend std::istream& operator >> (std::istream& is, Student& s);
 };

@@ -46,11 +46,3 @@ void Student::showStudent() const
     std::cout << "First name: " << this->firstName_ << std::endl;
     std::cout << "Last name: " << this->lastName_ << std::endl;
 }
-
-std::ostream& operator<<(std::ostream& os, const Student& s)
-{
-    os << "Index: " << s.getIndex() << std::endl;
-    os << "First name: " << s.getFirstName() << std::endl;
-    os << "Last name: " << s.getLastName() << std::endl;
-    return os;
-}
