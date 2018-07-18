@@ -8,12 +8,12 @@
 
 class dataBase
 {
-    public:
-        void addToDatabase();
-        void showDatabase();
-        void removeStudent(const int&);
-        void sortDatabase();
-        void menu() const;
-        void addToExternalFile();
-        void loadFromExternalFile();
+public:
+    void addToDatabase(); //dynamic adding students
+    void addToDatabase(Student& s);  //static adding students
+    void showDatabase();
+    void removeStudent(const int&);
+    void sortDatabase();
+    void addToExternalFile();
+    void loadFromExternalFile();
 };
