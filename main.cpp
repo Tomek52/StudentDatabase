@@ -2,69 +2,28 @@
 
 int main()
 {
-    dataBase dataBase;
-    int state=0;
-    while(state<7)
-    {
-        switch (state)
-        {
-            case 0: 
-                {
-	 	dataBase.menu();
-		std::cin >> state;
-		std::cout << std::endl;
-                break;
-                }
-            case 1:
-                {
-		std::cout << std::endl;
-		dataBase.addToDatabase();
-		state = 0;
-		std::cout << std::endl;
-                break;
-                }
-            case 2:
-                {
-		std::cout << std::endl;
-		dataBase.showDatabase();
-		state = 0;
-		std::cout << std::endl;
-                break;
-                }
-            case 3:
-                {
-		std::cout << std::endl;
-		int studentIndexToRemove;
-		std::cout << "Write index: ------\b\b\b\b\b\b";
-		std::cin >> studentIndexToRemove;
-		dataBase.removeStudent(studentIndexToRemove);
-		state = 0;
-		std::cout << std::endl;
-                break;
-                }
-            case 4:
-                {
-		std::cout << std::endl;
-		dataBase.sortDatabase();
-		state = 0;
-		std::cout << std::endl;
-                break; 
-                }
-	    case 5:
-		{
-		dataBase.addToExternalFile();
-		state = 0;
-		std::cout << std::endl;
-		break;
-		}
-	    case 6:
-		{
-		dataBase.loadFromExternalFile();
-		state = 0;
-		std::cout << std::endl;
-		break;
-		}
-        }
-    }
+    Database Database;
+    Student student1(730671, "Jan", "Tyski");
+    Student student2(123456, "Piotr", "Strong");
+    Student student3(931178, "Kasia", "Perla");
+
+    Database.addToDatabase(student1);
+    Database.addToDatabase(student2);
+    Database.addToDatabase(student3);
+
+    Database.showDatabase();
+
+    Database.sortDatabase();
+    std::cout << std::endl;
+    Database.showDatabase();
+
+    Database.removeStudent(student3.getIndex());
+    std::cout << std::endl;
+    Database.showDatabase();
+
+    Database.addToExternalFile();
+    std::cout << std::endl;
+    Database.loadFromExternalFile();
+
     return 0;
 }

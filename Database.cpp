@@ -2,14 +2,12 @@
 
 std::vector<Student> data;
 
-void dataBase::addToDatabase()
+void Database::addToDatabase(Student& s)
 {
-    Student temporaryStudent;
-    std::cin >> temporaryStudent;
-    data.push_back(temporaryStudent);
+    data.push_back(s);
 }
 
-void dataBase::showDatabase()
+void Database::showDatabase()
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {
@@ -17,77 +15,68 @@ void dataBase::showDatabase()
     }
 }
 
-void dataBase::removeStudent(const int& index)
+void Database::removeStudent(const int& index)
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {
         if (i->getIndex() == index)
-	{
-	    data.erase(i);
-	    std::cout << "Status: student removed successful" << std::endl;
-	    break;
-	}
+        {
+            data.erase(i);
+            std::cout << "Status: student removed successful" << std::endl;
+            break;
+        }
     }
 }
 
-void dataBase::sortDatabase()
+void Database::sortDatabase()
 {
-    std::sort(data.begin(), data.end(), [](Student& one, Student& two){return one.getIndex() < two.getIndex();});
+    std::sort(data.begin(), data.end(), [](Student& one, Student& two) {return one.getIndex() < two.getIndex(); });
     std::cout << "Status: sorting completed" << std::endl;
 }
 
-void dataBase::menu() const
-{
-    std::cout << std::endl;
-    std::cout << "~~~~Student's database~~~~" << std::endl;
-    std::cout << "#To add student, press 1" << std::endl;
-    std::cout << "#To show database, press 2" << std::endl;
-    std::cout << "#To remove student, press 3" << std::endl;
-    std::cout << "#To sort database by index, press 4" << std::endl;
-    std::cout << "#To save studenst in the external file, press 5" << std::endl;
-    std::cout << "#To load students from file, press 6" << std::endl;
-    std::cout << "#To exit program, press other number" << std::endl;
-    std::cout << "Option: ";
-}
-
-void dataBase::addToExternalFile()
+void Database::addToExternalFile()
 try
 {
-    std::ofstream outFile("StudentsDatabase.txt", std::ios_base::out | std::ios_base::ate | std::ios_base::app);
-    for (auto i = data.begin(); i != data.end(); i++)
+    if (data.size())
     {
-        outFile << i->getIndex() << std::endl;
-        outFile << i->getFirstName() << std::endl;
-        outFile << i->getLastName() << std::endl;
+        std::ofstream outFile("StudentsDatabase.txt", std::ios_base::out | std::ios_base::ate | std::ios_base::app);
+        for (auto i = data.begin(); i != data.end(); i++)
+        {
+            outFile << i->getIndex() << std::endl;
+            outFile << i->getFirstName() << std::endl;
+            outFile << i->getLastName() << std::endl;
+        }
+        outFile.close();
+        std::cout << "Status: load complete" << std::endl;
     }
-    outFile.close();
-    std::cout << "Status: load complete" << std::endl;
+    else
+    {
+        std::cout << "There are no students in the database" << std::endl;
+    }
 }
-catch(...)
+catch (...)
 {
-    std::cout<<"Error"<<std::endl;
+    std::cout << "Error: Added student to external file failed" << std::endl;
 }
 
-void dataBase::loadFromExternalFile()
+void Database::loadFromExternalFile()
 try
 {
     std::string textFromFile;
     std::ifstream inFile("StudentsDatabase.txt");
-    std::cout << "Studenst loaded from external file: " << std::endl << std::endl;
     if (inFile.is_open())
     {
+        std::cout << "Studenst loaded from external file: " << std::endl << std::endl;
         while (!inFile.eof())
-	    {
-	        getline(inFile, textFromFile);
-	        std::cout << textFromFile << std::endl;
-	    }
+        {
+            getline(inFile, textFromFile);
+            std::cout << textFromFile << std::endl;
+        }
     }
     else
-    {
-        std::cout << "Error: cannot open the file" << std::endl;
-    }
+        std::cout << "There is no StudentsDatabase.txt file to open" << std::endl << std::endl;
 }
-catch(...)
+catch (...)
 {
-    std::cout<<"Error"<<std::endl;
+    std::cout << "Error: Loaded students from external file failed" << std::endl;
 }
