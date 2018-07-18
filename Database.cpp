@@ -2,12 +2,12 @@
 
 std::vector<Student> data;
 
-void dataBase::addToDatabase(Student& s)
+void Database::addToDatabase(Student& s)
 {
     data.push_back(s);
 }
 
-void dataBase::showDatabase()
+void Database::showDatabase()
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {
@@ -15,7 +15,7 @@ void dataBase::showDatabase()
     }
 }
 
-void dataBase::removeStudent(const int& index)
+void Database::removeStudent(const int& index)
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {
@@ -28,13 +28,13 @@ void dataBase::removeStudent(const int& index)
     }
 }
 
-void dataBase::sortDatabase()
+void Database::sortDatabase()
 {
     std::sort(data.begin(), data.end(), [](Student& one, Student& two) {return one.getIndex() < two.getIndex(); });
     std::cout << "Status: sorting completed" << std::endl;
 }
 
-void dataBase::addToExternalFile()
+void Database::addToExternalFile()
 try
 {
     if (data.size())
@@ -59,7 +59,7 @@ catch (...)
     std::cout << "Error: Added student to external file failed" << std::endl;
 }
 
-void dataBase::loadFromExternalFile()
+void Database::loadFromExternalFile()
 try
 {
     std::string textFromFile;

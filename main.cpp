@@ -2,28 +2,28 @@
 
 int main()
 {
-    dataBase dataBase;
+    Database Database;
     Student student1(730671, "Jan", "Tyski");
     Student student2(123456, "Piotr", "Strong");
     Student student3(931178, "Kasia", "Perla");
 
-    dataBase.addToDatabase(student1);
-    dataBase.addToDatabase(student2);
-    dataBase.addToDatabase(student3);
+    Database.addToDatabase(student1);
+    Database.addToDatabase(student2);
+    Database.addToDatabase(student3);
 
-    dataBase.showDatabase();
+    Database.showDatabase();
 
-    dataBase.sortDatabase();
+    Database.sortDatabase();
     std::cout << std::endl;
-    dataBase.showDatabase();
+    Database.showDatabase();
 
-    dataBase.removeStudent(student3.getIndex());
+    Database.removeStudent(student3.getIndex());
     std::cout << std::endl;
-    dataBase.showDatabase();
+    Database.showDatabase();
 
-    dataBase.addToExternalFile();
+    Database.addToExternalFile();
     std::cout << std::endl;
-    dataBase.loadFromExternalFile();
+    Database.loadFromExternalFile();
 
     return 0;
 }

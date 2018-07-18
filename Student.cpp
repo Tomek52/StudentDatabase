@@ -1,7 +1,5 @@
 #include "Student.hpp"
 
-Student::Student() {}
-
 Student::Student(int index,
     std::string firstName,
     std::string lastName)
@@ -10,7 +8,7 @@ Student::Student(int index,
     , lastName_(lastName)
 {}
 
-Student::~Student() {}
+Student:: ~Student() {}
 
 int Student::getIndex() const
 {
@@ -51,8 +49,8 @@ void Student::showStudent() const
 
 std::ostream& operator<<(std::ostream& os, const Student& s)
 {
-    os << "Index: " << s.index_ << std::endl;
-    os << "First name: " << s.firstName_ << std::endl;
-    os << "Last name: " << s.lastName_ << std::endl;
+    os << "Index: " << s.getIndex() << std::endl;
+    os << "First name: " << s.getFirstName() << std::endl;
+    os << "Last name: " << s.getLastName() << std::endl;
     return os;
 }

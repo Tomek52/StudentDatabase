@@ -6,7 +6,7 @@
 #include <fstream>
 #include "Student.hpp"
 
-class dataBase
+class Database
 {
 public:
     void addToDatabase(Student& s);  //static adding students
