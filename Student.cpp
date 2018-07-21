@@ -4,10 +4,11 @@
 Student::Student(int index,
     std::string firstName,
     std::string lastName)
-    : index_(index)
-    , firstName_(firstName)
+    : firstName_(firstName)
     , lastName_(lastName)
-{}
+{
+    setIndex(index);
+}
 
 Student:: ~Student() {}
 
@@ -35,7 +36,7 @@ void Student::setIndex(int index)
         index_ = index;
     else
     {
-        std::cout << "Incorrect index. Your index must contains 6 numbers !" << std::endl;
+        std::cout << "Incorrect " <<this->firstName_<<" "<<this->lastName_<<" index. It must contains 6 numbers !" << std::endl;
         do
         {
             std::cout << "Input correct index: ";
@@ -58,7 +59,7 @@ void Student::setIndex(int index)
                 checkIndex = index_ / 100000;
                 if (checkIndex < 1.0 || checkIndex > 9.9)
                 {
-                    std::cout << "Incorrect index. Your index must contains 6 numbers !" << std::endl;
+                    std::cout << "Incorrect index. It must contains 6 numbers !" << std::endl;
                     std::cout << "First number cannot be 0 !" << std::endl;
                     correctIndex = false;
                     clear = true;
