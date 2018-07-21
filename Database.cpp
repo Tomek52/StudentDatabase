@@ -1,5 +1,4 @@
 #include "Database.hpp"
-
 std::vector<Student> data;
 
 void Database::addToDatabase(Student& s)
