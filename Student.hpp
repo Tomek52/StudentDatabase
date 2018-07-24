@@ -1,21 +1,16 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Person.hpp"
 
-class Student
+class Student : public Person
 {
 private:
     int index_;
-    std::string firstName_;
-    std::string lastName_;
-public:
+    public:
     Student(int index, std::string firstName, std::string lastName);
     virtual ~Student();
     int getIndex() const;
-    std::string getFirstName() const;
-    std::string getLastName() const;
     void setIndex(int);
-    void setFirstName(std::string);
-    void setLastName(std::string);
     void showStudent() const;
 };
