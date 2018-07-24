@@ -5,13 +5,13 @@
 class Person
 {
     private:
-        int pesel_;
+        std::string pesel_;
         std::string firstName_;
         std::string lastName_;
         char sex_;
         Address* address_
     public:
-        Person(int pesel, std::string firstName, std::string lastName, char sex, Address* address);
+        Person(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address);
         virtual ~Person();
         int getPesel() const;
         void setPesel(int pesel);
@@ -19,4 +19,6 @@ class Person
         void setFirstName(std::string);
         std::string getLastName() const;
         void setLastName(std::string);
+        
+        bool verifyPesel(std::string pesel);
 };
