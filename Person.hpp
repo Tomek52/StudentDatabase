@@ -9,7 +9,7 @@ class Person
         std::string firstName_;
         std::string lastName_;
         char sex_;
-        Address* address_
+        Address* address_;
     public:
         Person(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address);
         virtual ~Person();

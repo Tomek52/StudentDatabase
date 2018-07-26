@@ -8,7 +8,7 @@ class Student : public Person
 private:
     int index_;
     public:
-    Student(int index, std::string firstName, std::string lastName);
+    Student(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address, int index);
     virtual ~Student();
     int getIndex() const;
     void setIndex(int);

@@ -1,11 +1,8 @@
 #include "Student.hpp"
 #include <limits>
-
-Student::Student(int index,
-    std::string firstName,
-    std::string lastName)
-    : firstName_(firstName)
-    , lastName_(lastName)
+#include <string>
+Student::Student(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address, int index)
+    : Person(pesel, firstName, lastName, sex, address)
 {
     setIndex(index);
 }
@@ -17,16 +14,6 @@ int Student::getIndex() const
     return this->index_;
 }
 
-std::string Student::getFirstName() const
-{
-    return this->firstName_;
-}
-
-std::string Student::getLastName() const
-{
-    return this->lastName_;
-}
-
 void Student::setIndex(int index)
 {
     bool correctIndex = false;
@@ -36,7 +23,7 @@ void Student::setIndex(int index)
         index_ = index;
     else
     {
-        std::cout << "Incorrect " <<this->firstName_<<" "<<this->lastName_<<" index. It must contains 6 numbers !" << std::endl;
+        std::cout << "Incorrect " <<this->getFirstName()<<" "<<this->getLastName()<<" index. It must contains 6 numbers !" << std::endl;
         do
         {
             std::cout << "Input correct index: ";
@@ -73,19 +60,9 @@ void Student::setIndex(int index)
     }
 }
 
-void Student::setFirstName(std::string firstName)
-{
-    firstName_ = firstName;
-}
-
-void Student::setLastName(std::string lastName)
-{
-    lastName_ = lastName;
-}
-
 void Student::showStudent() const
 {
-    std::cout << "Index: " << this->index_ << std::endl;
-    std::cout << "First name: " << this->firstName_ << std::endl;
-    std::cout << "Last name: " << this->lastName_ << std::endl;
+    std::cout << "Index: " << this->getIndex() << std::endl;
+    std::cout << "First name: " << this->getFirstName()  << std::endl;
+    std::cout << "Last name: " << this->getLastName() << std::endl;
 }

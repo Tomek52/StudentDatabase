@@ -9,7 +9,7 @@ class Address
         int streetNumber_;
         int apartmentNumber_;
     public:
-        Address(std::string city,std::string zipCode, std::string::street, int streetNumber, int apartmentNumber);          
-        Address(std::string city,std::string zipCode, std::string::street, int streetNumber);
+        Address(std::string city,std::string zipCode, std::string street, int streetNumber, int apartmentNumber);          
+        Address(std::string city,std::string zipCode, std::string street, int streetNumber);
         ~Address();
 };

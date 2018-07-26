@@ -2,8 +2,9 @@
 
 int main()
 {
+    /*
     Database Database;
-    Student student1(730671, "Jan", "Tyski");
+    Student student1(new Person(730671, "Jan", "Tyski");
     Student student2(123456, "Piotr", "Strong");
     Student student3(931178, "Kasia", "Perla");
 
@@ -24,6 +25,6 @@ int main()
     Database.addToExternalFile();
     std::cout << std::endl;
     Database.loadFromExternalFile();
-
+    */
     return 0;
 }
