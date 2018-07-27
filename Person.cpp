@@ -31,4 +31,26 @@ bool Person::verifyPesel(std::string pesel)
     else return false;
 }
 
+Person::Person(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address)
+    : pesel_(pesel)
+    , firstName_(firstName)
+    , lastName_(lastName)
+    , sex_(sex)
+    , address_(address)
+{}
+
+std::string Person::getPesel() const
+{
+    return this->pesel_;
+}
+
+std::string Person::getFirstName() const
+{
+    return this->firstName_;
+}
+
+std::string Person::getLastName() const
+{
+    return this->lastName_;
+}
 
