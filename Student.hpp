@@ -13,4 +13,5 @@ private:
     int getIndex() const;
     void setIndex(int);
     void showStudent() const;
+    int getSalary() const;
 };

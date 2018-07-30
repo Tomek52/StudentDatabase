@@ -1,5 +1,5 @@
 #include "Database.hpp"
-std::vector<Student> data;
+std::vector<Person> data;
 
 void Database::addToDatabase(Student& s)
 {
@@ -10,7 +10,7 @@ void Database::showDatabase()
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {
-        i->showStudent();
+        i->showPerson();
     }
 }
 

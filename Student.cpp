@@ -66,3 +66,8 @@ void Student::showStudent() const
     std::cout << "First name: " << this->getFirstName()  << std::endl;
     std::cout << "Last name: " << this->getLastName() << std::endl;
 }
+
+int Student::getSalary() const
+{
+    return 0;
+}
