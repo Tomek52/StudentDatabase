@@ -5,8 +5,11 @@
 class Employee : public Person
 {
     private:
-        int salary_;
+        unsigned short int salary_;
     public:
         Employee(std::string, std::string, std::string, char, std::string address, int);
+        unsigned short int getSalary() const;
+        void setSalary(unsigned short int salary);
+        void showPerson() const;
 
 };

@@ -63,7 +63,6 @@ std::string Person::getAddress() const
 }
 void Person::showPerson() const
 {
-    std::cout << "------------------------" << std::endl;
     std::cout << "First name: " << this->getFirstName()  << std::endl;
     std::cout << "Last name:  " << this->getLastName() << std::endl;
     std::cout << "Pesel:      " << this->getPesel()  << std::endl;
