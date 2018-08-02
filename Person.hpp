@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include "Address.hpp"
 
 class Person
 {
@@ -9,9 +8,9 @@ class Person
         std::string firstName_;
         std::string lastName_;
         char sex_;
-        Address* address_;
+        std::string address_;
     public:
-        Person(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address);
+        Person(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address);
         virtual ~Person() {}
         std::string getPesel() const;
         std::string getFirstName() const;

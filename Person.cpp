@@ -6,7 +6,7 @@
 bool Person::verifyPesel(std::string pesel)
 {
     if(pesel.size()!=11) return false;
-    
+
     const std::array<int,10> numToCheckPesel = {9,7,3,1,9,7,3,1,9,7};
     int checkSum;
     int digit;
@@ -31,7 +31,7 @@ bool Person::verifyPesel(std::string pesel)
     else return false;
 }
 
-Person::Person(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address)
+Person::Person(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address)
     : pesel_(pesel)
     , firstName_(firstName)
     , lastName_(lastName)
