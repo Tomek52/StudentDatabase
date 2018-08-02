@@ -25,7 +25,10 @@ int main()
     Database.sortByPesel();
     separator();
     Database.showDatabase();
+    Database.deleteByPesel(worker2.getPesel());
+
     separator();
+
     Database.sortByLastName();
     Database.showDatabase();
 /*

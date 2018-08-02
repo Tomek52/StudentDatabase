@@ -23,6 +23,17 @@ void Database::sortByLastName()
     std::sort(data.begin(), data.end(), [](Person& one, Person& two) {return one.getLastName() < two.getLastName(); });
     std::cout << "Status: sorting by Last Name completed" << std::endl;
 }
+void Database::deleteByPesel(std::string pesel)
+{
+    for(auto i = data.begin(); i != data.end(); i++)
+    {
+        if(i->getPesel() == pesel)
+        {
+            data.erase(i);
+            break;
+        }
+    }
+}
 /*
 void Database::removeStudent(const int& index)
 {
