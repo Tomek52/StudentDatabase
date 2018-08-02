@@ -2,11 +2,14 @@
 
 int main()
 {
-    /*
+
     Database Database;
-    Student student1(new Person(730671, "Jan", "Tyski");
-    Student student2(123456, "Piotr", "Strong");
-    Student student3(931178, "Kasia", "Perla");
+    Address stadres1("wroclaw","50-320", "Czekoladowa", 30, 5);
+    Address stadres2("wroclaw","50-320", "Brzoskwinowa", 91);
+    Address stadres3("wroclaw","50-320", "Paprociowa", 50, 4);
+    Student student1("97090383731", "Jan", "Tyski", 'M', stadres1, 137002);
+    Student student2("97071315296", "Piotr", "Strong", 'M', stadres2, 136402);
+    Student student3("97011049766", "Kasia", "Perla", 'K', stadres3, 187002);
 
     Database.addToDatabase(student1);
     Database.addToDatabase(student2);
@@ -15,16 +18,13 @@ int main()
     Database.showDatabase();
 
     Database.sortDatabase();
-    std::cout << std::endl;
     Database.showDatabase();
 
     Database.removeStudent(student3.getIndex());
-    std::cout << std::endl;
     Database.showDatabase();
 
     Database.addToExternalFile();
-    std::cout << std::endl;
     Database.loadFromExternalFile();
-    */
+
     return 0;
 }
