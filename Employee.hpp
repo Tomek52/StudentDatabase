@@ -10,6 +10,6 @@ class Employee : public Person
         int salary_;
     public:
         Employee(std::string, std::string, std::string, char, Address*, int);
-        int getIndex() const;    
-        int getSalary() const;
+        virtual int getIndex() const;    
+        virtual int getSalary() const;
 };

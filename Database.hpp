@@ -6,14 +6,17 @@
 #include <fstream>
 #include "Student.hpp"
 #include <exception>
+#include "Person.hpp"
 
 class Database
 {
 public:
-    void addToDatabase(Student& s);
+    void addToDatabase(Person* s);
     void showDatabase();
     void removeStudent(const int&);
-    void sortDatabase();
+    void sortByIndex();
+    void sortByLastName();
+    void sortBySalary();
     void addToExternalFile();
     void loadFromExternalFile();
 };

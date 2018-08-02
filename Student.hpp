@@ -10,8 +10,8 @@ private:
     public:
     Student(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address, int index);
     virtual ~Student();
-    int getIndex() const;
+    virtual int getIndex() const;
     void setIndex(int);
     void showStudent() const;
-    int getSalary() const;
+    virtual int getSalary() const;
 };

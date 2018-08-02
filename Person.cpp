@@ -2,7 +2,7 @@
 #include <array>
 #include <iostream>
 #include <string>
-
+#include "Address.hpp"
 bool Person::verifyPesel(std::string pesel)
 {
     if(pesel.size()!=11) return false;
@@ -54,13 +54,21 @@ std::string Person::getLastName() const
     return this->lastName_;
 }
 
+char Person::getSex() const
+{
+    return this->sex_;
+}
+
 void Person::showPerson() const
 {
-    std::cout << "Pesel: " << this->getPesel() << std::endl;
-    std::cout << "First name: " << this->getFirstName() << std::endl;
-    std::cout << "Last name: " << this->getLastName() << std::endl;
-    std::cout << "sex: " << this->getSex() << std::endl;
-    std::cout << "Address: " << this->getAddrress() << std::endl;
-    //std::cout << "Index: " << this->getIndex() << std::endl;
-   // std::cout << "Salary: " << this->getSalary() << std::endl;
+    std::cout << "Pesel: " << this->getPesel();
+    std::cout << " " << this->getFirstName();
+    std::cout << " " << this->getLastName();
+    std::cout << " " << this->getSex() << std::endl;
+    std::cout << "Address: "; 
+    address_->getAddress();
+    std::cout << "Index: " << this->getIndex();
+    std::cout << " Salary: " << this->getSalary()<<std::endl;
 }
+
+
