@@ -21,7 +21,7 @@ public:
     void showByPesel(std::string pesel); //to do
     void sortBySalary(); //to do
     void sortByPesel();
-    void sortByLastName(); //to do
+    void sortByLastName();
     void deleteByPesel(std::string pesel); //to do
     void modifyAddressAndSalaryByPesel(std::string pesel); // to do
 

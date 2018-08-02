@@ -1,5 +1,5 @@
 #include "Database.hpp"
-
+inline void separator(){std::cout << "\n\n\n\n";}
 int main()
 {
 
@@ -23,7 +23,10 @@ int main()
 
     Database.showDatabase();
     Database.sortByPesel();
-    std::cout << "\n\n\n\n";
+    separator();
+    Database.showDatabase();
+    separator();
+    Database.sortByLastName();
     Database.showDatabase();
 /*
     Database.sortDatabase();

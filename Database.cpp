@@ -16,9 +16,13 @@ void Database::showDatabase()
 void Database::sortByPesel()
 {
     std::sort(data.begin(), data.end(), [](Person& one, Person& two) {return one.getPesel() < two.getPesel(); });
-    std::cout << "Status: sorting completed" << std::endl;
+    std::cout << "Status: sorting by Pesel completed" << std::endl;
 }
-
+void Database::sortByLastName()
+{
+    std::sort(data.begin(), data.end(), [](Person& one, Person& two) {return one.getLastName() < two.getLastName(); });
+    std::cout << "Status: sorting by Last Name completed" << std::endl;
+}
 /*
 void Database::removeStudent(const int& index)
 {

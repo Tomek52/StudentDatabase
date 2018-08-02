@@ -70,7 +70,4 @@ void Person::showPerson() const
     std::cout << "Address:    " << this->getAddress()  << std::endl;
     std::cout << "------------------------" << std::endl;
 }
-void getIndex()
-{
-   ///
-}
+
