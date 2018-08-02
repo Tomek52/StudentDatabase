@@ -12,5 +12,5 @@ private:
     virtual ~Student();
     int getIndex() const;
     void setIndex(int);
-    void showStudent() const;
+    void showPerson() const;
 };

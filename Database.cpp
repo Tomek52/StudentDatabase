@@ -10,7 +10,7 @@ void Database::showDatabase()
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {
-        i->showStudent();
+        i->showPerson();
     }
 }
 

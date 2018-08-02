@@ -53,4 +53,21 @@ std::string Person::getLastName() const
 {
     return this->lastName_;
 }
-
+char Person::getSex() const
+{
+    return this->sex_;
+}
+std::string Person::getAddress() const
+{
+    return this->address_;
+}
+void Person::showPerson() const
+{
+    std::cout << "------------------------" << std::endl;
+    std::cout << "First name: " << this->getFirstName()  << std::endl;
+    std::cout << "Last name:  " << this->getLastName() << std::endl;
+    std::cout << "Pesel:      " << this->getPesel()  << std::endl;
+    std::cout << "Sex:        " << this->getSex()  << std::endl;
+    std::cout << "Address:    " << this->getAddress()  << std::endl;
+    std::cout << "------------------------" << std::endl;
+}

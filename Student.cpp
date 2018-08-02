@@ -60,9 +60,8 @@ void Student::setIndex(int index)
     }
 }
 
-void Student::showStudent() const
+void Student::showPerson() const
 {
     std::cout << "Index: " << this->getIndex() << std::endl;
-    std::cout << "First name: " << this->getFirstName()  << std::endl;
-    std::cout << "Last name: " << this->getLastName() << std::endl;
+    Person::showPerson();
 }

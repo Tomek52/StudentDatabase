@@ -15,6 +15,9 @@ class Person
         std::string getPesel() const;
         std::string getFirstName() const;
         std::string getLastName() const;
+        char getSex() const;
+        std::string getAddress() const;
+        void showPerson() const;
 
         bool verifyPesel(std::string pesel);
 };
