@@ -18,6 +18,8 @@ class Person
         char getSex() const;
         std::string getAddress() const;
         void showPerson() const;
+        void getIndex();
+
 
         bool verifyPesel(std::string pesel);
 };

@@ -11,7 +11,7 @@
 class Database
 {
 public:
-    void addToDatabase(Student& s);
+    void addToDatabase(Person& p);
     void removeStudent(const int&);
     void sortDatabase();
     void addToExternalFile();
@@ -20,7 +20,7 @@ public:
     void showByLastName(std::string lastName); //to do
     void showByPesel(std::string pesel); //to do
     void sortBySalary(); //to do
-    void sortByPesel();// to do
+    void sortByPesel();
     void sortByLastName(); //to do
     void deleteByPesel(std::string pesel); //to do
     void modifyAddressAndSalaryByPesel(std::string pesel); // to do

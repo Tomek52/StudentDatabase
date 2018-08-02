@@ -1,9 +1,9 @@
 #include "Database.hpp"
-std::vector<Student> data;
+std::vector<Person> data;
 
-void Database::addToDatabase(Student& s)
+void Database::addToDatabase(Person& p)
 {
-    data.push_back(s);
+    data.push_back(p);
 }
 
 void Database::showDatabase()
@@ -13,7 +13,13 @@ void Database::showDatabase()
         i->showPerson();
     }
 }
+void Database::sortByPesel()
+{
+    std::sort(data.begin(), data.end(), [](Person& one, Person& two) {return one.getPesel() < two.getPesel(); });
+    std::cout << "Status: sorting completed" << std::endl;
+}
 
+/*
 void Database::removeStudent(const int& index)
 {
     for (auto i = data.begin(); i != data.end(); i++)
@@ -27,11 +33,6 @@ void Database::removeStudent(const int& index)
     }
 }
 
-void Database::sortDatabase()
-{
-    std::sort(data.begin(), data.end(), [](Student& one, Student& two) {return one.getIndex() < two.getIndex(); });
-    std::cout << "Status: sorting completed" << std::endl;
-}
 
 void Database::addToExternalFile()
 try
@@ -79,3 +80,4 @@ catch (...)
 {
     std::cout << "Error: Loaded students from external file failed" << std::endl;
 }
+*/
