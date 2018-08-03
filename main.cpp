@@ -6,7 +6,6 @@ int main()
 {
     Database Database;
     Person* a = new Employee("98647278919", "Andrzej", "Kmicic", 'm', new Address("Warszawa", "23-000", "Poznanska", 5,23), 10000);
-    
     Person* b = new Employee("12345678999", "Robert", "Lewandowski", 'm', new Address("Warszawa", "23-000", "Poznanska", 5,23), 40000);
     Person* c = new Employee("78647278919", "Anna", "Kos", 'f', new Address("Warszawa", "23-000", "Poznanska", 5,23), 2000);
     Person* d = new Employee("38647278919", "Magdalena", "Kowalska", 'f', new Address("Warszawa", "23-000", "Poznanska", 5,23), 13000);
@@ -28,12 +27,17 @@ int main()
     Database.addToDatabase(sd);
 
     Database.showDatabase();
+    std::cout << "\n\n";
 
     Database.modifySalaryByPesel(1234, a->getPesel());
     Database.removeStudentByIndex(sc->getIndex());
+    Database.removePersonByPesel(e->getPesel());
     Database.sortBySalary();
+    std::cout << "\n\n";
+
     Database.showDatabase();
-    std::cout << "\n\n\n";
+    std::cout << "\n\n";
+
     Database.showByLastName(sa->getLastName());
     Database.showByPesel(d->getPesel());
 

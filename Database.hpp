@@ -14,6 +14,7 @@ public:
     void addToDatabase(Person* s);
     void showDatabase();
     void removeStudentByIndex(const int&);
+    void removePersonByPesel(std::string);
     void sortByIndex();
     void sortByLastName();
     void sortBySalary();

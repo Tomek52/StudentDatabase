@@ -21,12 +21,23 @@ void Database::removeStudentByIndex(const int& index)
         if ((*i)->getIndex() == index)
         {
             data.erase(i);
-            std::cout << "Status: student removed successful" << std::endl;
+            std::cout << "Status: student removed by index successful" << std::endl;
             break;
         }
     }
 }
-
+ void Database::removePersonByPesel(std::string pesel)
+ {
+     for (auto i = data.begin(); i != data.end(); i++)
+     {
+         if ((*i)->getPesel() == pesel)
+         {
+             data.erase(i);
+             std::cout << "Status: person removed by pesel successful" << std::endl;
+             break;
+         }
+     }
+ }
 void Database::modifySalaryByPesel(int salary, std::string pesel)
 {
     for (auto i = data.begin(); i != data.end(); i++)
@@ -64,19 +75,19 @@ void Database::showByPesel(std::string pesel)
 void Database::sortByIndex()
 {
     std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getIndex() < two->getIndex(); });
-    std::cout << "Status: sorting completed" << std::endl;
+    std::cout << "Status: sorting by index completed" << std::endl;
 }
 
 void Database::sortByLastName()
 {
     std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getLastName() < two->getLastName(); });
-    std::cout << "Status: sorting completed" << std::endl;
+    std::cout << "Status: sorting by last name completed" << std::endl;
 }
 
 void Database::sortBySalary()
 {
     std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getSalary() < two->getSalary(); });
-    std::cout << "Status: sorting completed" << std::endl;
+    std::cout << "Status: sorting by salary completed" << std::endl;
 }
 /*
 void Database::addToExternalFile()
