@@ -31,7 +31,6 @@ bool Person::verifyPesel(std::string pesel)
     else return false;
 }
 
-
 Person::Person(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address)
     : pesel_(pesel)
     , firstName_(firstName)
