@@ -20,6 +20,8 @@ public:
     void addToExternalFile();
     void loadFromExternalFile();
     void modifySalaryByPesel(int salary, std::string pesel);
+    void showByLastName(std::string);
+    void showByPesel(std::string);
 };
 
 class OpenFileError : public std::exception

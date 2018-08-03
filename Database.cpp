@@ -39,6 +39,28 @@ void Database::modifySalaryByPesel(int salary, std::string pesel)
         }
     }
 }
+void Database::showByLastName(std::string lastname)
+{
+    for (auto i = data.begin(); i != data.end(); i++)
+    {
+        if ((*i)->getLastName() == lastname)
+        {
+            std::cout << "Searching by last name complete. Your result:" << std::endl;
+            (*i)->showPerson();
+        }
+    }
+}
+void Database::showByPesel(std::string pesel)
+{
+    for (auto i = data.begin(); i != data.end(); i++)
+    {
+        if ((*i)->getPesel() == pesel)
+        {
+            std::cout << "Searching by pesel complete. Your result:" << std::endl;
+             (*i)->showPerson();
+        }
+    }
+}
 void Database::sortByIndex()
 {
     std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getIndex() < two->getIndex(); });

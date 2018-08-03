@@ -33,6 +33,9 @@ int main()
     Database.removeStudentByIndex(sc->getIndex());
     Database.sortBySalary();
     Database.showDatabase();
+    std::cout << "\n\n\n";
+    Database.showByLastName(sa->getLastName());
+    Database.showByPesel(d->getPesel());
 
     
     return 0;

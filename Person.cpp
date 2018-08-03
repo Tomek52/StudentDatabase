@@ -69,6 +69,7 @@ void Person::showPerson() const
     address_->getAddress();
     std::cout << "Index: " << this->getIndex();
     std::cout << " Salary: " << this->getSalary()<<std::endl;
+    std::cout << "------" << std::endl;
 }
 
 
