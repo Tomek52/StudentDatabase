@@ -16,9 +16,8 @@ class Person
         std::string getPesel() const;
         std::string getFirstName() const;
         std::string getLastName() const;
-        virtual int getIndex() const {return 0;}
-        virtual int getSalary() const {return 0;}
-        char getSex() const;
+        virtual int getIndex() const = 0;
+        virtual int getSalary() const = 0;
         bool verifyPesel(std::string pesel);
         void showPerson() const;
 };

@@ -13,5 +13,7 @@ Address::~Address() {}
 
 void Address::getAddress() const
 {
-    std::cout<<city_<<" "<<zipCode_<<" "<<street_<<" "<<streetNumber_<<"/"<<apartmentNumber_<<std::endl;
+    std::cout<<"City: "<<city_<<std::endl;
+    std::cout<<"Zip code: "<<zipCode_<<std::endl;
+    std::cout<<"Street: "<<street_<<" "<<streetNumber_<<"/"<<apartmentNumber_<<std::endl;
 }

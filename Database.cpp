@@ -1,19 +1,19 @@
 #include "Database.hpp"
-std::vector<Person*> data;
+std::vector<Person> data;
 
-void Database::addToDatabase(Person* s)
+void Database::addToDatabase(Student& s)
 {
     data.push_back(s);
 }
 
 void Database::showDatabase()
 {
-    for(const auto &person: data)
+    for (auto i = data.begin(); i != data.end(); i++)
     {
-        person->showPerson();
+        i->showPerson();
     }
 }
-/*
+
 void Database::removeStudent(const int& index)
 {
     for (auto i = data.begin(); i != data.end(); i++)
@@ -26,25 +26,13 @@ void Database::removeStudent(const int& index)
         }
     }
 }
-*/
-void Database::sortByIndex()
+
+void Database::sortDatabase()
 {
-    std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getIndex() < two->getIndex(); });
+    std::sort(data.begin(), data.end(), [](Student& one, Student& two) {return one.getIndex() < two.getIndex(); });
     std::cout << "Status: sorting completed" << std::endl;
 }
 
-void Database::sortByLastName()
-{
-    std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getLastName() < two->getLastName(); });
-    std::cout << "Status: sorting completed" << std::endl;
-}
-
-void Database::sortBySalary()
-{
-    std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getSalary() < two->getSalary(); });
-    std::cout << "Status: sorting completed" << std::endl;
-}
-/*
 void Database::addToExternalFile()
 try
 {
@@ -90,4 +78,4 @@ try
 catch (...)
 {
     std::cout << "Error: Loaded students from external file failed" << std::endl;
-}*/
+}

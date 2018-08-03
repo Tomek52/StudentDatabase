@@ -7,10 +7,10 @@ Employee::Employee(std::string pesel, std::string firstName, std::string lastNam
 
 int Employee::getIndex() const
 {
-    return 0;
+    return std::numeric_limits<int>::max();
 }
 
 int Employee::getSalary() const
 {
-    return this -> salary_;
+    return this -> salary_
 }
