@@ -21,4 +21,5 @@ class Person
         char getSex() const;
         bool verifyPesel(std::string pesel);
         void showPerson() const;
+        virtual void setSalary(int) = 0;
 };

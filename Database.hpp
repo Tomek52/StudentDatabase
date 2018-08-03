@@ -19,6 +19,7 @@ public:
     void sortBySalary();
     void addToExternalFile();
     void loadFromExternalFile();
+    void modifySalaryByPesel(int salary, std::string pesel);
 };
 
 class OpenFileError : public std::exception

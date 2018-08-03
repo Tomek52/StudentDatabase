@@ -71,3 +71,4 @@ int Student::getSalary() const
 {
     return 0;
 }
+void Student::setSalary(int) {}

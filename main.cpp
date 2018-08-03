@@ -17,7 +17,19 @@ int main()
     Database.addToDatabase(d);
     Database.addToDatabase(e);
 
+    Person* sa = new Student("94081097437", "Janusz", "Kmicic", 'm', new Address("Warszawa", "13-700", "Poznanska", 5, 3), 147738);
+    Person* sb = new Student("94101060139", "Tomek", "Kurtyka", 'm', new Address("Warszawa", "21-500", "Wroclawska", 60, 23), 180038);
+    Person* sc = new Student("94110615614", "Zenon", "Kopacz", 'm', new Address("Warszawa", "22-400", "Legnicka", 30, 2 ), 817738);
+    Person* sd = new Student("94081072764", "Marika", "Szklanka", 'm', new Address("Warszawa", "33-050", "Krakowska", 7, 0), 157738);
+
+    Database.addToDatabase(sa);
+    Database.addToDatabase(sb);
+    Database.addToDatabase(sc);
+    Database.addToDatabase(sd);
+
     Database.showDatabase();
+
+    Database.modifySalaryByPesel(1234, a->getPesel());
     Database.sortBySalary();
     Database.showDatabase();
 

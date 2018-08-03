@@ -27,6 +27,18 @@ void Database::removeStudent(const int& index)
     }
 }
 */
+void Database::modifySalaryByPesel(int salary, std::string pesel)
+{
+    for (auto i = data.begin(); i != data.end(); i++)
+    {
+        if ((*i)->getPesel() == pesel)
+        {
+            (*i)->setSalary(salary);
+            std::cout << "Status: modify salary successful" << std::endl;
+            break;
+        }
+    }
+}
 void Database::sortByIndex()
 {
     std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getIndex() < two->getIndex(); });

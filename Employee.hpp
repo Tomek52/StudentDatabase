@@ -12,4 +12,5 @@ class Employee : public Person
         Employee(std::string, std::string, std::string, char, Address*, int);
         virtual int getIndex() const;    
         virtual int getSalary() const;
+        void setSalary(int);
 };

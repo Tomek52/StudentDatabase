@@ -14,3 +14,7 @@ int Employee::getSalary() const
 {
     return this -> salary_;
 }
+void Employee::setSalary(int salary)
+{
+    salary_ = salary;
+}
