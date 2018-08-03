@@ -31,6 +31,7 @@ bool Person::verifyPesel(std::string pesel)
     else return false;
 }
 
+
 Person::Person(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address)
     : pesel_(pesel)
     , firstName_(firstName)
@@ -70,4 +71,3 @@ void Person::showPerson() const
     std::cout << "Address:    " << this->getAddress()  << std::endl;
     std::cout << "------------------------" << std::endl;
 }
-
