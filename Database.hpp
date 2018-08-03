@@ -13,7 +13,7 @@ class Database
 public:
     void addToDatabase(Person* s);
     void showDatabase();
-    void removeStudent(const int&);
+    void removeStudentByIndex(const int&);
     void sortByIndex();
     void sortByLastName();
     void sortBySalary();

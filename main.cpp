@@ -30,6 +30,7 @@ int main()
     Database.showDatabase();
 
     Database.modifySalaryByPesel(1234, a->getPesel());
+    Database.removeStudentByIndex(sc->getIndex());
     Database.sortBySalary();
     Database.showDatabase();
 

@@ -13,12 +13,12 @@ void Database::showDatabase()
         person->showPerson();
     }
 }
-/*
-void Database::removeStudent(const int& index)
+
+void Database::removeStudentByIndex(const int& index)
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {
-        if (i->getIndex() == index)
+        if ((*i)->getIndex() == index)
         {
             data.erase(i);
             std::cout << "Status: student removed successful" << std::endl;
@@ -26,7 +26,7 @@ void Database::removeStudent(const int& index)
         }
     }
 }
-*/
+
 void Database::modifySalaryByPesel(int salary, std::string pesel)
 {
     for (auto i = data.begin(); i != data.end(); i++)
