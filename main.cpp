@@ -41,6 +41,10 @@ int main()
     Database.showByLastName(sa->getLastName());
     Database.showByPesel(d->getPesel());
 
+    std::cout << "\n\n";
+    Database.addToExternalFile();
+    std::cout << "\n\n";
+    Database.loadFromExternalFile();
     
     return 0;
 }

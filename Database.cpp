@@ -89,7 +89,7 @@ void Database::sortBySalary()
     std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getSalary() < two->getSalary(); });
     std::cout << "Status: sorting by salary completed" << std::endl;
 }
-/*
+
 void Database::addToExternalFile()
 try
 {
@@ -98,9 +98,12 @@ try
         std::ofstream outFile("StudentsDatabase.txt", std::ios_base::out | std::ios_base::ate | std::ios_base::app);
         for (auto i = data.begin(); i != data.end(); i++)
         {
-            outFile << i->getIndex() << std::endl;
-            outFile << i->getFirstName() << std::endl;
-            outFile << i->getLastName() << std::endl;
+            outFile << (*i)->getIndex() << std::endl;
+            outFile << (*i)->getFirstName() << std::endl;
+            outFile << (*i)->getLastName() << std::endl;
+            outFile << (*i)->getSalary() << std::endl;
+            outFile << (*i)->getPesel() << std::endl;
+            outFile << "address" << std::endl;
         }
         outFile.close();
         std::cout << "Status: load complete" << std::endl;
@@ -118,13 +121,34 @@ catch (...)
 void Database::loadFromExternalFile()
 try
 {
+    unsigned short int counter = 0;
+    unsigned int current_number_of_lines = 0;
     std::string textFromFile;
     std::ifstream inFile("StudentsDatabase.txt");
     if (inFile.is_open())
     {
-        std::cout << "Studenst loaded from external file: " << std::endl << std::endl;
+        std::cout << "Student loaded from external file: " << std::endl << std::endl;
+
         while (!inFile.eof())
         {
+            switch(counter)
+            {
+             case 0: std::cout << "Index: "; break;
+             case 1: std::cout << "First Name: "; break;
+             case 2: std::cout << "Last Name: "; break;
+             case 3: std::cout << "Salary: "; break;
+             case 4: std::cout << "Pesel: "; break;
+             case 5: std::cout << "Address: "; break;
+             default:
+                     {
+                             std::cout << "------" << std::endl;
+                             std::cout << "Index: ";
+                             counter = 0;
+                             break;
+                     }
+            }
+            counter++;
+            current_number_of_lines++;
             getline(inFile, textFromFile);
             std::cout << textFromFile << std::endl;
         }
@@ -135,4 +159,4 @@ try
 catch (...)
 {
     std::cout << "Error: Loaded students from external file failed" << std::endl;
-}*/
+}
