@@ -14,7 +14,7 @@ void Database::showDatabase()
     }
 }
 
-void Database::removeStudentByIndex(const int& index)
+void Database::removeStudentByIndex(const unsigned int& index)
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {
@@ -38,7 +38,7 @@ void Database::removeStudentByIndex(const int& index)
          }
      }
  }
-void Database::modifySalaryByPesel(int salary, std::string pesel)
+void Database::modifySalaryByPesel(unsigned int salary, std::string pesel)
 {
     for (auto i = data.begin(); i != data.end(); i++)
     {

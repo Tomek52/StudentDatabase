@@ -7,10 +7,10 @@
 class Employee : public Person
 {
     private:
-        int salary_;
+        unsigned int salary_;
     public:
-        Employee(std::string, std::string, std::string, char, Address*, int);
-        virtual int getIndex() const;    
-        virtual int getSalary() const;
-        void setSalary(int);
+        Employee(std::string, std::string, std::string, char, Address*, unsigned int);
+        virtual unsigned int getIndex() const;    
+        virtual unsigned int getSalary() const;
+        void setSalary(unsigned int);
 };

@@ -6,13 +6,13 @@
 class Student : public Person
 {
 private:
-    int index_;
+    unsigned int index_;
     public:
-    Student(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address, int index);
+    Student(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address, unsigned int index);
     virtual ~Student();
-    virtual int getIndex() const;
-    void setIndex(int);
+    virtual unsigned int getIndex() const;
+    void setIndex(unsigned int);
     void showStudent() const;
-    virtual int getSalary() const;
-    void setSalary(int);
+    virtual unsigned int getSalary() const;
+    void setSalary(unsigned int);
 };

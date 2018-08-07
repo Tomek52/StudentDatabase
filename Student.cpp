@@ -1,7 +1,7 @@
 #include "Student.hpp"
 #include <limits>
 #include <string>
-Student::Student(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address, int index)
+Student::Student(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address, unsigned int index)
     : Person(pesel, firstName, lastName, sex, address)
 {
     setIndex(index);
@@ -9,12 +9,12 @@ Student::Student(std::string pesel, std::string firstName, std::string lastName,
 
 Student:: ~Student() {}
 
-int Student::getIndex() const
+unsigned int Student::getIndex() const
 {
     return this->index_;
 }
 
-void Student::setIndex(int index)
+void Student::setIndex(unsigned int index)
 {
     bool correctIndex = false;
     bool clear = false;
@@ -67,8 +67,8 @@ void Student::showStudent() const
     std::cout << "Last name: " << this->getLastName() << std::endl;
 }
 
-int Student::getSalary() const
+unsigned int Student::getSalary() const
 {
     return 0;
 }
-void Student::setSalary(int) {}
+void Student::setSalary(unsigned int) {}

@@ -14,14 +14,14 @@ class Database
 public:
     void addToDatabase(Person* s);
     void showDatabase();
-    void removeStudentByIndex(const int&);
+    void removeStudentByIndex(const unsigned int&);
     void removePersonByPesel(std::string);
     void sortByIndex();
     void sortByLastName();
     void sortBySalary();
     void addToExternalFile();
     void loadFromExternalFile();
-    void modifySalaryByPesel(int salary, std::string pesel);
+    void modifySalaryByPesel(unsigned int salary, std::string pesel);
     void showByLastName(std::string);
     void showByPesel(std::string);
 };

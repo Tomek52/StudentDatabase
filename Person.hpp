@@ -16,10 +16,10 @@ class Person
         std::string getPesel() const;
         std::string getFirstName() const;
         std::string getLastName() const;
-        virtual int getIndex() const {return 0;}
-        virtual int getSalary() const {return 0;}
+        virtual unsigned int getIndex() const {return 0;}
+        virtual unsigned int getSalary() const {return 0;}
         char getSex() const;
         bool verifyPesel(std::string pesel);
         void showPerson() const;
-        virtual void setSalary(int) = 0;
+        virtual void setSalary(unsigned int) = 0;
 };
