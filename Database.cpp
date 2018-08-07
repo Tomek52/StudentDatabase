@@ -117,21 +117,9 @@ catch (...)
 {
     std::cout << "Error: Added student to external file failed" << std::endl;
 }
-
-void Database::loadFromExternalFile()
-try
+void Database::loadFromExternalFileShowSwitch(unsigned short int &counter)
 {
-    unsigned short int counter = 0;
-    unsigned int current_number_of_lines = 0;
-    std::string textFromFile;
-    std::ifstream inFile("StudentsDatabase.txt");
-    if (inFile.is_open())
-    {
-        std::cout << "Student loaded from external file: " << std::endl << std::endl;
-
-        while (!inFile.eof())
-        {
-            switch(counter)
+switch(counter)
             {
              case 0: std::cout << "Index: "; break;
              case 1: std::cout << "First Name: "; break;
@@ -146,9 +134,22 @@ try
                              counter = 0;
                              break;
                      }
-            }
+            }                             
+            
+}
+void Database::loadFromExternalFile()
+try
+{
+    std::string textFromFile;
+    std::ifstream inFile("StudentsDatabase.txt");
+    if (inFile.is_open())
+    {
+        std::cout << "Student loaded from external file: " << std::endl << std::endl;
+        while (!inFile.eof())
+        {
+            static unsigned short int counter = 0;
+            loadFromExternalFileShowSwitch(counter);
             counter++;
-            current_number_of_lines++;
             getline(inFile, textFromFile);
             std::cout << textFromFile << std::endl;
         }

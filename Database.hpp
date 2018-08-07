@@ -10,6 +10,7 @@
 
 class Database
 {
+    void loadFromExternalFileShowSwitch(unsigned short int &);
 public:
     void addToDatabase(Person* s);
     void showDatabase();
