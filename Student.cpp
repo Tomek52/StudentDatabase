@@ -1,7 +1,7 @@
 #include "Student.hpp"
 #include <limits>
 #include <string>
-Student::Student(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address, unsigned int index)
+Student::Student(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address, unsigned int index)
     : Person(pesel, firstName, lastName, sex, address)
 {
     setIndex(index);

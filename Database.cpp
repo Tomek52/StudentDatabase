@@ -103,7 +103,7 @@ try
             outFile << (*i)->getLastName() << std::endl;
             outFile << (*i)->getSalary() << std::endl;
             outFile << (*i)->getPesel() << std::endl;
-            outFile << "address" << std::endl;
+            outFile << (*i)->getAddress() << std::endl;
         }
         outFile.close();
         std::cout << "Status: load complete" << std::endl;
