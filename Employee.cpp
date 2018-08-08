@@ -4,16 +4,17 @@ Employee::Employee(std::string pesel, std::string firstName, std::string lastNam
     : Person(pesel, firstName, lastName, sex, address)
     , salary_(salary)
 {}
-unsigned short int Employee::getSalary() const
+
+unsigned int Employee::getIndex() const
 {
-    return this->salary_;
+    return std::numeric_limits<int>::max();
 }
-void Employee::setSalary(unsigned short int salary)
+
+unsigned int Employee::getSalary() const
+{
+    return this -> salary_
+}
+void Employee::setSalary(unsigned int salary)
 {
     salary_ = salary;
-}
-void Employee::showPerson() const
-{
-    std::cout << "Salary:     " << this->getSalary()  << std::endl;
-    Person::showPerson();
 }

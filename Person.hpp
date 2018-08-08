@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include "Address.hpp"
 
 class Person
 {
@@ -9,14 +8,20 @@ class Person
         std::string firstName_;
         std::string lastName_;
         char sex_;
-        Address* address_;
+        std::string address_;
     public:
-        Person(std::string pesel, std::string firstName, std::string lastName, char sex, Address* address);
+        Person(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address);
         virtual ~Person();
         int getPesel() const;
         std::string getFirstName() const;
         void setFirstName(std::string);
         std::string getLastName() const;
-        
+        virtual unsigned int getIndex() const {return 0;}
+        virtual unsigned int getSalary() const {return 0;}
+        char getSex() const;
+        std::string getAddress() const;
         bool verifyPesel(std::string pesel);
+        void showPerson() const;
+        virtual void setSalary(unsigned int) = 0;
+        void setAddress(std::string address);
 };

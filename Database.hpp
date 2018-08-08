@@ -5,27 +5,25 @@
 #include <algorithm>
 #include <fstream>
 #include "Student.hpp"
-#include "Employee.hpp"
 #include <exception>
 
 class Database
 {
+    void loadFromExternalFileShowSwitch(unsigned short int &);
 public:
-    void addToDatabase(Person& p);
-    void removeStudent(const int&);
-    void sortDatabase();
+    void addToDatabase(Student& s);
+    void showDatabase();
+    void removeStudentByIndex(const unsigned int&);
+    void removePersonByPesel(std::string);
+    void sortByIndex();
+    void sortByLastName();
+    void sortBySalary();
     void addToExternalFile();
     void loadFromExternalFile();
-    void showDatabase();
-    void showByLastName(std::string lastName); //to do
-    void showByPesel(std::string pesel); //to do
-    void sortBySalary(); //to do
-    void sortByPesel();
-    void sortByLastName();
-    void deleteByPesel(std::string pesel); //to do
-    void modifyAddressAndSalaryByPesel(std::string pesel); // to do
-
-
+    void modifySalaryByPesel(unsigned int salary, std::string pesel);
+    void modifyAddressByPesel(std::string address, std::string pesel);
+    void showByLastName(std::string);
+    void showByPesel(std::string);
 };
 
 class OpenFileError : public std::exception

@@ -1,45 +1,60 @@
 #include "Database.hpp"
-inline void separator(){std::cout << "\n\n\n\n";}
+
 int main()
 {
-
     Database Database;
+    
+    Person* a = new Employee("98647278919", "Andrzej", "Kmicic", 'm', "Warszawa 23-000 Poznanska 5/23", 10000);
+    Person* b = new Employee("12345678999", "Robert", "Lewandowski", 'm', "Warszawa 23-000 Poznanska 5/23", 40000);
+    Person* c = new Employee("78647278919", "Anna", "Kos", 'f', "Warszawa 23-000 Poznanska 5/23", 2000);
+    Person* d = new Employee("38647278919", "Magdalena", "Kowalska", 'f', "Warszawa 23-000 Poznanska 5/23", 13000);
+    Person* e = new Employee("18647278919", "Mariusz", "Maly", 'm', "Warszawa 23-000 Poznanska 5/23", 13500);
+    Database.addToDatabase(a);
+    Database.addToDatabase(b);
+    Database.addToDatabase(c);
+    Database.addToDatabase(d);
+    Database.addToDatabase(e);
 
-    Student student1("97090383731", "Jan", "Tyski", 'M', "Czekoladowa 30/5 50-320 Wroclaw", 137002);
-    Student student2("97071315296", "Piotr", "Strong", 'M', "Brzoskwiniowa 91 50-319 Wroclaw", 136402);
-    Student student3("97011049766", "Kasia", "Perla", 'F', "Paprociowa 50/4 50-340 Wroclaw", 187002);
+    Person* sa = new Student("94081097437", "Janusz", "Kmicic", 'm', "Warszawa 13-700 Poznanska 5/3", 147738);
+    Person* sb = new Student("94101060139", "Tomek", "Kurtyka", 'm', "Warszawa 21-500 Wroclawska 60/23", 180038);
+    Person* sc = new Student("94110615614", "Zenon", "Kopacz", 'm', "Warszawa 22-400 Legnicka 30/2", 817738);
+    Person* sd = new Student("94081072764", "Marika", "Szklanka", 'm', "Warszawa 33-050 Krakowska 7/0", 157738);
 
-    Database.addToDatabase(student1);
-    Database.addToDatabase(student2);
-    Database.addToDatabase(student3);
-
-    Employee worker1("75111004333", "Jerzy", "Jastrzab", 'M', "Pistacjowa 33 50-355 Wroclaw", 1790);
-    Employee worker2("72101594678", "Jaroslaw", "Motyl", 'M', "Spokojna 42/8 50-360 Wroclaw", 1850);
-    Employee worker3("72011018206", "Roza", "Kokon", 'F', "Jarzebinowa 38/5 50-330 Wroclaw", 1921);
-
-    Database.addToDatabase(worker1);
-    Database.addToDatabase(worker2);
-    Database.addToDatabase(worker3);
+    Database.addToDatabase(sa);
+    Database.addToDatabase(sb);
+    Database.addToDatabase(sc);
+    Database.addToDatabase(sd);
 
     Database.showDatabase();
-    Database.sortByPesel();
-    separator();
-    Database.showDatabase();
-    Database.deleteByPesel(worker2.getPesel());
 
-    separator();
-
-    Database.sortByLastName();
-    Database.showDatabase();
-/*
     Database.sortDatabase();
+    std::cout << std::endl;
     Database.showDatabase();
 
     Database.removeStudent(student3.getIndex());
+    std::cout << std::endl;
+    std::cout << "\n\n";
+
+    Database.modifySalaryByPesel(1234, a->getPesel());
+    Database.modifyAddressByPesel("Wroclaw 50-221 Sloneczna 12/1", a->getPesel());
+    Database.removeStudentByIndex(sc->getIndex());
+    Database.removePersonByPesel(e->getPesel());
+    Database.sortBySalary();
+    std::cout << "\n\n";
+
     Database.showDatabase();
+    std::cout << "\n\n";
+
+    Database.showByLastName(sa->getLastName());
+    Database.showByPesel(d->getPesel());
 
     Database.addToExternalFile();
+    std::cout << std::endl;
     Database.loadFromExternalFile();
-*/
+    std::cout << "\n\n";
+    Database.addToExternalFile();
+    std::cout << "\n\n";
+    Database.loadFromExternalFile();
+    
     return 0;
 }
