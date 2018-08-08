@@ -22,6 +22,7 @@ public:
     void addToExternalFile();
     void loadFromExternalFile();
     void modifySalaryByPesel(unsigned int salary, std::string pesel);
+    void modifyAddressByPesel(std::string address, std::string pesel);
     void showByLastName(std::string);
     void showByPesel(std::string);
 };

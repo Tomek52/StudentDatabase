@@ -30,6 +30,7 @@ int main()
     std::cout << "\n\n";
 
     Database.modifySalaryByPesel(1234, a->getPesel());
+    Database.modifyAddressByPesel("Wroclaw 50-221 Sloneczna 12/1", a->getPesel());
     Database.removeStudentByIndex(sc->getIndex());
     Database.removePersonByPesel(e->getPesel());
     Database.sortBySalary();

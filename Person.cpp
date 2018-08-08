@@ -77,4 +77,7 @@ void Person::showPerson() const
     std::cout << "------" << std::endl;
 }
 
-
+void Person::setAddress(std::string address)
+{
+    address_=address;
+}

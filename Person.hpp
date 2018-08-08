@@ -22,4 +22,5 @@ class Person
         bool verifyPesel(std::string pesel);
         void showPerson() const;
         virtual void setSalary(unsigned int) = 0;
+        void setAddress(std::string address);
 };

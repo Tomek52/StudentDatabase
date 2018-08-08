@@ -50,6 +50,19 @@ void Database::modifySalaryByPesel(unsigned int salary, std::string pesel)
         }
     }
 }
+
+void Database::modifyAddressByPesel(std::string address, std::string pesel)
+{
+    for (auto i = data.begin(); i != data.end(); i++)
+    {
+        if((*i)->getPesel() == pesel)
+        {
+            (*i)->setAddress(address);
+            std::cout << "Status: modify address successful" << std::endl;
+        }
+    }
+}
+
 void Database::showByLastName(std::string lastname)
 {
     for (auto i = data.begin(); i != data.end(); i++)
