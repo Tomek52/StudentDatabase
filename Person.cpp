@@ -31,7 +31,11 @@ bool Person::verifyPesel(std::string pesel)
     else return false;
 }
 
-Person::Person(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address)
+Person::Person( std::string pesel, 
+                std::string firstName, 
+                std::string lastName, 
+                char sex, 
+                std::string address)
     : pesel_(pesel)
     , firstName_(firstName)
     , lastName_(lastName)
@@ -41,40 +45,40 @@ Person::Person(std::string pesel, std::string firstName, std::string lastName, c
 
 std::string Person::getPesel() const
 {
-    return this->pesel_;
+    return pesel_;
 }
 
 std::string Person::getFirstName() const
 {
-    return this->firstName_;
+    return firstName_;
 }
 
 std::string Person::getLastName() const
 {
-    return this->lastName_;
+    return lastName_;
 
 }
 
 char Person::getSex() const
 {
-    return this->sex_;
+    return sex_;
 }
 
 std::string Person::getAddress() const
 {
-    return this->address_;
+    return address_;
 }
 
 void Person::showPerson() const
 {
-    std::cout << "Pesel: " << this->getPesel();
-    std::cout << " " << this->getFirstName();
-    std::cout << " " << this->getLastName();
-    std::cout << " " << this->getSex() << std::endl;
+    std::cout << "Pesel: " << getPesel();
+    std::cout << " " << getFirstName();
+    std::cout << " " << getLastName();
+    std::cout << " " << getSex() << std::endl;
     std::cout << "Address: "; 
-    std::cout << this->getAddress();
-    std::cout << "Index: " << this->getIndex();
-    std::cout << " Salary: " << this->getSalary()<<std::endl;
+    std::cout << getAddress();
+    std::cout << "Index: " << getIndex();
+    std::cout << " Salary: " << getSalary()<<std::endl;
     std::cout << "------" << std::endl;
 }
 

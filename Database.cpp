@@ -1,16 +1,16 @@
 #include "Database.hpp"
-std::vector<Person> data;
+std::vector<Person*> data;
 
-void Database::addToDatabase(Student& s)
+void Database::addToDatabase(Person* s)
 {
     data.push_back(s);
 }
 
 void Database::showDatabase()
 {
-    for (auto i = data.begin(); i != data.end(); i++)
+    for(const auto &person: data)
     {
-        i->showPerson();
+        person->showPerson();
     }
 }
 
@@ -50,19 +50,6 @@ void Database::modifySalaryByPesel(unsigned int salary, std::string pesel)
         }
     }
 }
-
-void Database::modifyAddressByPesel(std::string address, std::string pesel)
-{
-    for (auto i = data.begin(); i != data.end(); i++)
-    {
-        if((*i)->getPesel() == pesel)
-        {
-            (*i)->setAddress(address);
-            std::cout << "Status: modify address successful" << std::endl;
-        }
-    }
-}
-
 void Database::showByLastName(std::string lastname)
 {
     for (auto i = data.begin(); i != data.end(); i++)
@@ -91,6 +78,12 @@ void Database::sortByIndex()
     std::cout << "Status: sorting by index completed" << std::endl;
 }
 
+void Database::sortByLastName()
+{
+    std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getLastName() < two->getLastName(); });
+    std::cout << "Status: sorting by last name completed" << std::endl;
+}
+
 void Database::sortBySalary()
 {
     std::sort(data.begin(), data.end(), [](Person* one, Person* two) {return one->getSalary() < two->getSalary(); });
@@ -110,7 +103,7 @@ try
             outFile << (*i)->getLastName() << std::endl;
             outFile << (*i)->getSalary() << std::endl;
             outFile << (*i)->getPesel() << std::endl;
-            outFile << (*i)->getAddress() << std::endl;
+            outFile << "address" << std::endl;      /// THIS NEED TO BE REPAIR!
         }
         outFile.close();
         std::cout << "Status: load complete" << std::endl;
@@ -167,4 +160,15 @@ try
 catch (...)
 {
     std::cout << "Error: Loaded students from external file failed" << std::endl;
+}
+void Database::modifyAddressByPesel(std::string address, std::string pesel)
+{
+    for (auto i = data.begin(); i != data.end(); i++)
+    {
+        if((*i)->getPesel() == pesel)
+        {
+            (*i)->setAddress(address);
+            std::cout << "Status: modify address successful" << std::endl;
+        }
+    }
 }

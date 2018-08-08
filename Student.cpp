@@ -1,17 +1,20 @@
 #include "Student.hpp"
 #include <limits>
 #include <string>
-Student::Student(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address, unsigned int index)
+Student::Student(   std::string pesel, 
+                    std::string firstName, 
+                    std::string lastName, 
+                    char sex, 
+                    std::string address, 
+                    unsigned int index)
     : Person(pesel, firstName, lastName, sex, address)
 {
     setIndex(index);
 }
 
-Student:: ~Student() {}
-
 unsigned int Student::getIndex() const
 {
-    return this->index_;
+    return index_;
 }
 
 void Student::setIndex(unsigned int index)
@@ -62,9 +65,9 @@ void Student::setIndex(unsigned int index)
 
 void Student::showStudent() const
 {
-    std::cout << "Index: " << this->getIndex() << std::endl;
-    std::cout << "First name: " << this->getFirstName()  << std::endl;
-    std::cout << "Last name: " << this->getLastName() << std::endl;
+    std::cout << "Index: " << getIndex() << std::endl;
+    std::cout << "First name: " << getFirstName()  << std::endl;
+    std::cout << "Last name: " << getLastName() << std::endl;
 }
 
 unsigned int Student::getSalary() const

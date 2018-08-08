@@ -10,9 +10,13 @@ class Person
         char sex_;
         std::string address_;
     public:
-        Person(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address);
-        virtual ~Person();
-        int getPesel() const;
+        Person( std::string pesel, 
+                std::string firstName, 
+                std::string lastName, 
+                char sex, 
+                std::string address);
+        
+        std::string getPesel() const;
         std::string getFirstName() const;
         void setFirstName(std::string);
         std::string getLastName() const;
@@ -23,5 +27,6 @@ class Person
         bool verifyPesel(std::string pesel);
         void showPerson() const;
         virtual void setSalary(unsigned int) = 0;
-        void setAddress(std::string address);
+        void setAddress(std::string);
+        
 };

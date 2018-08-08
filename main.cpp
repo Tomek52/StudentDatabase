@@ -1,4 +1,6 @@
 #include "Database.hpp"
+#include "Student.hpp"
+#include "Employee.hpp"
 
 int main()
 {
@@ -27,12 +29,11 @@ int main()
 
     Database.showDatabase();
 
-    Database.sortDatabase();
+    Database.sortByIndex();
     std::cout << std::endl;
     Database.showDatabase();
 
-    Database.removeStudent(student3.getIndex());
-    std::cout << std::endl;
+    Database.removeStudentByIndex(sa->getIndex());
     std::cout << "\n\n";
 
     Database.modifySalaryByPesel(1234, a->getPesel());

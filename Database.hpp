@@ -11,7 +11,7 @@ class Database
 {
     void loadFromExternalFileShowSwitch(unsigned short int &);
 public:
-    void addToDatabase(Student& s);
+    void addToDatabase(Person* s);
     void showDatabase();
     void removeStudentByIndex(const unsigned int&);
     void removePersonByPesel(std::string);

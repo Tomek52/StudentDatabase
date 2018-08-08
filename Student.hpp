@@ -8,8 +8,12 @@ class Student : public Person
 private:
     unsigned int index_;
     public:
-    Student(std::string pesel, std::string firstName, std::string lastName, char sex, std::string address, unsigned int index);
-    virtual ~Student();
+    Student(    std::string pesel, 
+                std::string firstName, 
+                std::string lastName, 
+                char sex, 
+                std::string address, 
+                unsigned int index);
     virtual unsigned int getIndex() const;
     void setIndex(unsigned int);
     void showStudent() const;
