@@ -12,9 +12,9 @@ class Employee : public Person
         Employee(   std::string, 
                     std::string, 
                     std::string, 
-                    char, 
                     std::string, 
-                    unsigned int);
+                    std::string, 
+                    int);
         virtual unsigned int getIndex() const;    
         unsigned int getSalary() const;
         void setSalary(unsigned int);

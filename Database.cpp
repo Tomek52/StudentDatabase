@@ -1,4 +1,5 @@
 #include "Database.hpp"
+#include <array>
 std::vector<Person*> data;
 
 void Database::addToDatabase(Person* s)
@@ -98,12 +99,13 @@ try
         std::ofstream outFile("StudentsDatabase.txt", std::ios_base::out | std::ios_base::ate | std::ios_base::app);
         for (auto i = data.begin(); i != data.end(); i++)
         {
-            outFile << (*i)->getIndex() << std::endl;
+            outFile << (*i)->getPesel() << std::endl;
             outFile << (*i)->getFirstName() << std::endl;
             outFile << (*i)->getLastName() << std::endl;
+            outFile << (*i)->getSex() <<std::endl;
+            outFile << (*i)->getAddress() << std::endl;
+            outFile << (*i)->getIndex() << std::endl;
             outFile << (*i)->getSalary() << std::endl;
-            outFile << (*i)->getPesel() << std::endl;
-            outFile << "address" << std::endl;      /// THIS NEED TO BE REPAIR!
         }
         outFile.close();
         std::cout << "Status: load complete" << std::endl;
@@ -140,18 +142,29 @@ switch(counter)
 void Database::loadFromExternalFile()
 try
 {
+    std::string oneLine;
     std::string textFromFile;
+    std::array<std::string,7> loadedPerson;
     std::ifstream inFile("StudentsDatabase.txt");
     if (inFile.is_open())
     {
-        std::cout << "Student loaded from external file: " << std::endl << std::endl;
-        while (!inFile.eof())
+        while(!inFile.eof())
         {
-            static unsigned short int counter = 0;
-            loadFromExternalFileShowSwitch(counter);
-            counter++;
-            getline(inFile, textFromFile);
-            std::cout << textFromFile << std::endl;
+            for(int i=0; i<7;i++)
+            {
+                getline(inFile, oneLine);
+                loadedPerson[i]=oneLine;
+            }
+            if(std::stoi(loadedPerson[6])==0)
+            {
+                Person* student = new Student(loadedPerson[0],loadedPerson[1],loadedPerson[2],loadedPerson[3],loadedPerson[4], std::stoi(loadedPerson[5]));
+                addToDatabase(student);
+            }
+            else
+            {
+                Person* employee = new Employee(loadedPerson[0],loadedPerson[1],loadedPerson[2],loadedPerson[3],loadedPerson[4], std::stoi(loadedPerson[6]));
+                addToDatabase(employee);
+            }
         }
     }
     else

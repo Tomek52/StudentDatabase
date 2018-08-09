@@ -3,9 +3,9 @@
 Employee::Employee( std::string pesel, 
                     std::string firstName, 
                     std::string lastName, 
-                    char sex, 
+                    std::string sex, 
                     std::string address, 
-                    unsigned int salary)
+                    int salary)
     : Person(pesel, firstName, lastName, sex, address)
     , salary_(salary)
 {}

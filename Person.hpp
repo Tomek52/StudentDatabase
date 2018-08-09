@@ -7,13 +7,13 @@ class Person
         std::string pesel_;
         std::string firstName_;
         std::string lastName_;
-        char sex_;
+        std::string sex_;
         std::string address_;
     public:
         Person( std::string pesel, 
                 std::string firstName, 
                 std::string lastName, 
-                char sex, 
+                std::string sex, 
                 std::string address);
         
         std::string getPesel() const;
@@ -22,7 +22,7 @@ class Person
         std::string getLastName() const;
         virtual unsigned int getIndex() const {return 0;}
         virtual unsigned int getSalary() const {return 0;}
-        char getSex() const;
+        std::string getSex() const;
         std::string getAddress() const;
         bool verifyPesel(std::string pesel);
         void showPerson() const;

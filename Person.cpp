@@ -34,7 +34,7 @@ bool Person::verifyPesel(std::string pesel)
 Person::Person( std::string pesel, 
                 std::string firstName, 
                 std::string lastName, 
-                char sex, 
+                std::string sex, 
                 std::string address)
     : pesel_(pesel)
     , firstName_(firstName)
@@ -59,7 +59,7 @@ std::string Person::getLastName() const
 
 }
 
-char Person::getSex() const
+std::string Person::getSex() const
 {
     return sex_;
 }
@@ -77,7 +77,7 @@ void Person::showPerson() const
     std::cout << " " << getSex() << std::endl;
     std::cout << "Address: "; 
     std::cout << getAddress();
-    std::cout << "Index: " << getIndex();
+    std::cout << " Index: " << getIndex();
     std::cout << " Salary: " << getSalary()<<std::endl;
     std::cout << "------" << std::endl;
 }

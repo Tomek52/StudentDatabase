@@ -11,7 +11,7 @@ private:
     Student(    std::string pesel, 
                 std::string firstName, 
                 std::string lastName, 
-                char sex, 
+                std::string sex, 
                 std::string address, 
                 unsigned int index);
     virtual unsigned int getIndex() const;
