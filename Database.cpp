@@ -108,7 +108,7 @@ try
             outFile << (*i)->getSalary() << std::endl;
         }
         outFile.close();
-        std::cout << "Status: load complete" << std::endl;
+        std::cout << "Status: added to file complete" << std::endl;
     }
     else
     {
@@ -119,31 +119,11 @@ catch (...)
 {
     std::cout << "Error: Added student to external file failed" << std::endl;
 }
-void Database::loadFromExternalFileShowSwitch(unsigned short int &counter)
-{
-switch(counter)
-            {
-             case 0: std::cout << "Index: "; break;
-             case 1: std::cout << "First Name: "; break;
-             case 2: std::cout << "Last Name: "; break;
-             case 3: std::cout << "Salary: "; break;
-             case 4: std::cout << "Pesel: "; break;
-             case 5: std::cout << "Address: "; break;
-             default:
-                     {
-                             std::cout << "------" << std::endl;
-                             std::cout << "Index: ";
-                             counter = 0;
-                             break;
-                     }
-            }                             
             
-}
 void Database::loadFromExternalFile()
 try
 {
     std::string oneLine;
-    std::string textFromFile;
     std::array<std::string,7> loadedPerson;
     std::ifstream inFile("StudentsDatabase.txt");
     if (inFile.is_open())
@@ -165,6 +145,7 @@ try
                 Person* employee = new Employee(loadedPerson[0],loadedPerson[1],loadedPerson[2],loadedPerson[3],loadedPerson[4], std::stoi(loadedPerson[6]));
                 addToDatabase(employee);
             }
+            oneLine.clear();
         }
     }
     else
@@ -174,6 +155,7 @@ catch (...)
 {
     std::cout << "Error: Loaded students from external file failed" << std::endl;
 }
+
 void Database::modifyAddressByPesel(std::string address, std::string pesel)
 {
     for (auto i = data.begin(); i != data.end(); i++)
