@@ -6,7 +6,7 @@ SCENARIO("veryfing pesel")
 {
     GIVEN("correct pesel of person")
     {
-        std::string pesel = "44051401359";
+        std::string pesel = "44051401358";
         Person* p = new Student(pesel,"a","b","m","asd",123456);
 
         WHEN("pesel is correct")

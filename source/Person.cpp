@@ -12,21 +12,9 @@ bool Person::verifyPesel(std::string pesel)
     int digit;
     for(int i=0; i<10; i++)
     {
-        try
-        {
-            digit = pesel[i]-48;
-            checkSum+=digit*numToCheckPesel[i];
-        }
-        catch(const std::invalid_argument& e)
-        {
-            std::cout<<"Invalid argument: "<<e.what()<<std::endl;
-        }
-        catch(...)
-        {
-            std::cout<<"Unknown error"<<std::endl;
-        }
+        digit = pesel[i]-48;
+        checkSum+=digit*numToCheckPesel[i];
     }
-
     if(((checkSum%10)+48)==pesel[10]) return true;
     else return false;
 }
@@ -41,7 +29,20 @@ Person::Person( std::string pesel,
     , lastName_(lastName)
     , sex_(sex)
     , address_(address)
-{}
+{
+    try
+    {
+        if(!verifyPesel(pesel_)) throw "Invalid Pesel";
+    }
+    catch(std::string e)
+    {
+        std::cout<<e<<std::endl;
+    }
+    catch(...)
+    {
+        std::cout<<"Unknown error in verify pesel"<<std::endl;
+    }
+}
 
 std::string Person::getPesel() const
 {
