@@ -1,4 +1,2 @@
-# StudentDatabase
+# StudentDatabase [![Build Status](https://travis-ci.org/Tomek52/StudentDatabase.svg?branch=master)](https://travis-ci.org/Tomek52/StudentDatabase)
 Educational project
-
-[![CircleCI](https://circleci.com/gh/Tomek52/StudentDatabase/tree/master.svg?style=svg)](https://circleci.com/gh/Tomek52/StudentDatabase/tree/master)
