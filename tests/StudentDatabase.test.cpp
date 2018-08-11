@@ -2,20 +2,6 @@
 #include "../source/Person.hpp"
 #include "../source/Database.hpp"
 
-SCENARIO("test")
-{
-    GIVEN("asd")
-    {
-        WHEN("aaa")
-        {
-            THEN("www")
-            {
-                REQUIRE(1==1);
-            }
-        }
-    }
-}
-
 SCENARIO("veryfing pesel")
 {
     GIVEN("correct pesel of person")
@@ -28,6 +14,7 @@ SCENARIO("veryfing pesel")
             THEN("verifyPesel return true")
             {
                 REQUIRE(p->verifyPesel(p->getPesel())==true);
+                delete p;
             }
         }
     }
