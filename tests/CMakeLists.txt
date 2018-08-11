@@ -16,7 +16,3 @@ target_link_libraries(${TARGET_NAME}
 
 target_include_directories(${TARGET_NAME}
     PUBLIC ../)
-
-add_test(
-    NAME ${TARGET_NAME}
-    COMMAND ${TARGET_NAME} -o report.xml -r junit)
