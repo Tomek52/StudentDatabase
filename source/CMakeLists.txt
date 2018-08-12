@@ -8,4 +8,5 @@ add_library(${TARGET_NAME}
     Person.cpp
     Person.hpp
     Student.cpp
-    Student.hpp)
+    Student.hpp
+    main.cpp)
