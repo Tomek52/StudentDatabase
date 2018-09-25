@@ -1,20 +1,26 @@
 #include "Student.hpp"
 #include <limits>
 #include <string>
-Student::Student(   std::string pesel, 
-                    std::string firstName, 
-                    std::string lastName, 
-                    std::string sex, 
-                    std::string address, 
+
+
+Student::Student(   string pesel, 
+                    string firstName, 
+                    string lastName, 
+                    string sex, 
+                    string address, 
                     unsigned int index)
     : Person(pesel, firstName, lastName, sex, address)
-{
-    setIndex(index);
-}
+    , index_(index)
+{}
 
 unsigned int Student::getIndex() const
 {
-    return index_;
+    return this->index_;
+}
+
+unsigned int Student::getSalary() const
+{
+    return 0;
 }
 
 void Student::setIndex(unsigned int index)
@@ -26,21 +32,21 @@ void Student::setIndex(unsigned int index)
         index_ = index;
     else
     {
-        std::cout << "Incorrect " <<this->getFirstName()<<" "<<this->getLastName()<<" index. It must contains 6 numbers !" << std::endl;
+        cout << "Incorrect " << this->getFirstName() << " " << this->getLastName() << " index. It must contains 6 numbers !" << endl;
         do
         {
-            std::cout << "Input correct index: ";
+            cout << "Input correct index: ";
             if (clear)
             {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
-            std::cin >> index_;
+            cin >> index_;
 
-            if (!std::cin)
+            if (!cin)
             {
-                std::cout << std::endl;
-                std::cout << "Index can contains only numbers !" << std::endl;
+                cout << endl;
+                cout << "Index can contains only numbers !" << endl;
                 correctIndex = false;
                 clear = true;
             }
@@ -49,8 +55,8 @@ void Student::setIndex(unsigned int index)
                 checkIndex = index_ / 100000;
                 if (checkIndex < 1.0 || checkIndex > 9.9)
                 {
-                    std::cout << "Incorrect index. It must contains 6 numbers !" << std::endl;
-                    std::cout << "First number cannot be 0 !" << std::endl;
+                    cout << "Incorrect index. It must contains 6 numbers !" << endl;
+                    cout << "First number cannot be 0 !" << endl;
                     correctIndex = false;
                     clear = true;
                 }
@@ -65,13 +71,7 @@ void Student::setIndex(unsigned int index)
 
 void Student::showStudent() const
 {
-    std::cout << "Index: " << getIndex() << std::endl;
-    std::cout << "First name: " << getFirstName()  << std::endl;
-    std::cout << "Last name: " << getLastName() << std::endl;
+    cout << "Index: " << getIndex() << endl;
+    cout << "First name: " << getFirstName()  << endl;
+    cout << "Last name: " << getLastName() << endl;
 }
-
-unsigned int Student::getSalary() const
-{
-    return 0;
-}
-void Student::setSalary(unsigned int) {}

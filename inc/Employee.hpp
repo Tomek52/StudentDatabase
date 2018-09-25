@@ -4,18 +4,23 @@
 #include <limits>
 #include "Person.hpp"
 
+using namespace std;
+
 class Employee : public Person
 {
-    private:
         unsigned int salary_;
+
     public:
-        Employee(   std::string, 
-                    std::string, 
-                    std::string, 
-                    std::string, 
-                    std::string, 
+        Employee(   string, 
+                    string, 
+                    string, 
+                    string, 
+                    string, 
                     int);
-        virtual unsigned int getIndex() const;    
-        unsigned int getSalary() const;
-        void setSalary(unsigned int);
+
+        virtual unsigned int getIndex() const; 
+
+        unsigned int getSalary() const noexcept;
+
+        void setSalary(unsigned int) noexcept;
 };

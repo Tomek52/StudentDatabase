@@ -8,26 +8,38 @@
 #include "Employee.hpp"
 #include <exception>
 
+using namespace std;
+
 class Database
 {
+    vector<Person*> data;
+    
     void loadFromExternalFileShowSwitch(unsigned short int &);
+
 public:
+
     void addToDatabase(Person* s);
-    void showDatabase();
+    
     void removeStudentByIndex(const unsigned int&);
-    void removePersonByPesel(std::string);
+    void removePersonByPesel(string);
+
     void sortByIndex();
     void sortByLastName();
     void sortBySalary();
+
     void addToExternalFile();
     void loadFromExternalFile();
-    void modifySalaryByPesel(unsigned int salary, std::string pesel);
-    void modifyAddressByPesel(std::string address, std::string pesel);
-    void showByLastName(std::string);
-    void showByPesel(std::string);
+
+    void modifySalaryByPesel(unsigned int salary, string pesel);
+    void modifyAddressByPesel(string address, string pesel);
+
+    void showByLastName(string);
+    void showByPesel(string);
+    void showDatabase();
+
 };
 
-class OpenFileError : public std::exception
+class OpenFileError : public exception
 {
 public:
     const char* what();

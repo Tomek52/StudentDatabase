@@ -3,20 +3,26 @@
 #include <string>
 #include "Person.hpp"
 
+using namespace std;
+
 class Student : public Person
 {
-private:
     unsigned int index_;
+
     public:
-    Student(    std::string pesel, 
-                std::string firstName, 
-                std::string lastName, 
-                std::string sex, 
-                std::string address, 
+    Student(    string pesel, 
+                string firstName, 
+                string lastName, 
+                string sex, 
+                string address, 
                 unsigned int index);
+
     virtual unsigned int getIndex() const;
-    void setIndex(unsigned int);
-    void showStudent() const;
     virtual unsigned int getSalary() const;
+    
     void setSalary(unsigned int);
+    void setIndex(unsigned int) = {0};
+
+    void showStudent() const;
+    
 };

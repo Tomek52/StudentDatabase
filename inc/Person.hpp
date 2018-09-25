@@ -5,12 +5,12 @@ using namespace std;
 
 class Person
 {
-    private:
         string pesel_;
         string firstName_;
         string lastName_;
         string sex_;
         string address_;
+    
     public:
         Person( string pesel, 
                 string firstName, 
