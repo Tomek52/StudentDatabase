@@ -1,6 +1,5 @@
 #include "Database.hpp"
-#include "Student.hpp"
-#include "Employee.hpp"
+
 int main()
 {
     Database Database;

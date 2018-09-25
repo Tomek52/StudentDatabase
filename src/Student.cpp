@@ -23,6 +23,11 @@ unsigned int Student::getSalary() const
     return 0;
 }
 
+void Student::setSalary(unsigned int)
+{
+    return ;
+}
+
 void Student::setIndex(unsigned int index)
 {
     bool correctIndex = false;
