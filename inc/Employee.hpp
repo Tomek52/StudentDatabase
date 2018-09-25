@@ -23,4 +23,5 @@ class Employee : public Person
         unsigned int getSalary() const noexcept;
 
         void setSalary(unsigned int) noexcept;
+        
 };
