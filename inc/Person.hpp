@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include <sstream>
+#include <array>
+#include <iostream>
 
 using namespace std;
 
@@ -33,5 +36,5 @@ class Person
         
         bool verifyPesel(string pesel);
         std::string toString() const noexcept;
-        void showPerson() const noexcept;
+        void showPerson();
 };

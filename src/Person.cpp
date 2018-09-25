@@ -1,7 +1,5 @@
 #include "Person.hpp"
-#include <array>
-#include <iostream>
-#include <string>
+
 
 Person::Person( string pesel, 
                 string firstName, 
@@ -41,9 +39,9 @@ string Person::getAddress() const noexcept
     return address_;
 }
 
-string Person::setFirstName(string firstname) noexcept
+void Person::setFirstName(string firstName) noexcept
 {
-    firstName_ = firstname;
+    firstName_ = firstName;
 }
 
 void Person::setAddress(string address) noexcept
@@ -79,7 +77,7 @@ bool Person::verifyPesel(string pesel)
     else return false;
 }
 
-std::string Person::toString() const
+std::string Person::toString() const noexcept
 {
     stringstream ss;
     ss  << "Pesel: " << getPesel()
@@ -91,9 +89,10 @@ std::string Person::toString() const
         << " Index: " << getIndex()
         << " Salary: " << getSalary() << endl
         << "------" << endl;
+    return ss.str();
 }
 
-void showPerson() const noexcept
+void Person::showPerson()
 {
     cout << toString();
 }

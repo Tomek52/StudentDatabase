@@ -20,8 +20,8 @@ class Student : public Person
     virtual unsigned int getIndex() const;
     virtual unsigned int getSalary() const;
     
-    void setSalary(unsigned int);
-    void setIndex(unsigned int) = {0};
+    void setSalary(unsigned int) noexcept;
+    virtual void setIndex(unsigned int);
 
     void showStudent() const;
     

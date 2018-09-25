@@ -13,7 +13,7 @@ using namespace std;
 class Database
 {
     vector<Person*> data;
-    
+
     void loadFromExternalFileShowSwitch(unsigned short int &);
 
 public:
@@ -42,5 +42,5 @@ public:
 class OpenFileError : public exception
 {
 public:
-    const char* what();
+    char* what();
 };

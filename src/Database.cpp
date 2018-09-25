@@ -81,6 +81,7 @@ catch (...)
 }
             
 void Database::loadFromExternalFile()
+{
 try
 {
     string oneLine;
