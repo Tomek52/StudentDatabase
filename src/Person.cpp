@@ -3,11 +3,11 @@
 #include <iostream>
 #include <string>
 
-Person::Person( std::string pesel, 
-                std::string firstName, 
-                std::string lastName, 
-                std::string sex, 
-                std::string address)
+Person::Person( string pesel, 
+                string firstName, 
+                string lastName, 
+                string sex, 
+                string address)
     : pesel_(pesel)
     , firstName_(firstName)
     , lastName_(lastName)
@@ -15,47 +15,47 @@ Person::Person( std::string pesel,
     , address_(address)
 {}
 
-std::string Person::getPesel() const noexcept
+string Person::getPesel() const noexcept
 {
     return pesel_;
 }
 
-std::string Person::getFirstName() const noexcept
+string Person::getFirstName() const noexcept
 {
     return firstName_;
 }
 
-std::string Person::getLastName() const noexcept
+string Person::getLastName() const noexcept
 {
     return lastName_;
 
 }
 
-std::string Person::getSex() const noexcept
+string Person::getSex() const noexcept
 {
     return sex_;
 }
  
-std::string Person::getAddress() const noexcept
+string Person::getAddress() const noexcept
 {
     return address_;
 }
 
-std::string Person::setFirstName(std::string firstname) noexcept
+string Person::setFirstName(string firstname) noexcept
 {
     firstName_ = firstname;
 }
 
-void Person::setAddress(std::string address) noexcept
+void Person::setAddress(string address) noexcept
 {
     address_ = address;
 }
 
-bool Person::verifyPesel(std::string pesel)
+bool Person::verifyPesel(string pesel)
 {
     if (pesel.size() != 11) return false;
     
-    const std::array<int,10> numToCheckPesel = {9,7,3,1,9,7,3,1,9,7};
+    const array<int,10> numToCheckPesel = {9,7,3,1,9,7,3,1,9,7};
     int checkSum = 0;
     int digit;
     for(int i = 0; i < 10; i++)
@@ -65,13 +65,13 @@ bool Person::verifyPesel(std::string pesel)
             digit = pesel[i]-48;
             checkSum += (digit * numToCheckPesel[i]);
         }
-        catch(const std::invalid_argument& e)
+        catch(const invalid_argument& e)
         {
-            std::cout << "Invalid argument: " << e.what() << std::endl;
+            cout << "Invalid argument: " << e.what() << endl;
         }
         catch(...)
         {
-            std::cout << "Unknown error" << std::endl;
+            cout << "Unknown error" << endl;
         }
     }
 
@@ -79,15 +79,21 @@ bool Person::verifyPesel(std::string pesel)
     else return false;
 }
 
-void Person::showPerson() const
+std::string Person::toString() const
 {
-    std::cout << "Pesel: " << getPesel();
-    std::cout << " " << getFirstName();
-    std::cout << " " << getLastName();
-    std::cout << " " << getSex() << std::endl;
-    std::cout << "Address: "; 
-    std::cout << getAddress();
-    std::cout << " Index: " << getIndex();
-    std::cout << " Salary: " << getSalary()<<std::endl;
-    std::cout << "------" << std::endl;
+    stringstream ss;
+    ss  << "Pesel: " << getPesel()
+        << " " << getFirstName()
+        << " " << getLastName()
+        << " " << getSex() << endl
+        << "Address: "
+        << getAddress()
+        << " Index: " << getIndex()
+        << " Salary: " << getSalary() << endl
+        << "------" << endl;
+}
+
+void showPerson() const noexcept
+{
+    cout << toString();
 }

@@ -1,35 +1,37 @@
 #pragma once
 #include <string>
 
+using namespace std;
+
 class Person
 {
     private:
-        std::string pesel_;
-        std::string firstName_;
-        std::string lastName_;
-        std::string sex_;
-        std::string address_;
+        string pesel_;
+        string firstName_;
+        string lastName_;
+        string sex_;
+        string address_;
     public:
-        Person( std::string pesel, 
-                std::string firstName, 
-                std::string lastName, 
-                std::string sex, 
-                std::string address);
+        Person( string pesel, 
+                string firstName, 
+                string lastName, 
+                string sex, 
+                string address);
         
         virtual unsigned int getIndex() const {return 0;}
         virtual unsigned int getSalary() const {return 0;}
         virtual void setSalary(unsigned int) = 0;
         
-        std::string getPesel() const noexcept;
-        std::string getFirstName() const noexcept;
-        std::string getLastName() const noexcept;
-        std::string getSex() const noexcept;
-        std::string getAddress() const noexcept;
+        string getPesel() const noexcept;
+        string getFirstName() const noexcept;
+        string getLastName() const noexcept;
+        string getSex() const noexcept;
+        string getAddress() const noexcept;
         
-        void setFirstName(std::string) noexcept;
-        void setAddress(std::string) noexcept;
+        void setFirstName(string) noexcept;
+        void setAddress(string) noexcept;
         
-        bool verifyPesel(std::string pesel);
-        void showPerson() const;
-              
+        bool verifyPesel(string pesel);
+        std::string toString() const noexcept;
+        void showPerson() const noexcept;
 };
