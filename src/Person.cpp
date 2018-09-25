@@ -1,0 +1,93 @@
+#include "Person.hpp"
+#include <array>
+#include <iostream>
+#include <string>
+
+Person::Person( std::string pesel, 
+                std::string firstName, 
+                std::string lastName, 
+                std::string sex, 
+                std::string address)
+    : pesel_(pesel)
+    , firstName_(firstName)
+    , lastName_(lastName)
+    , sex_(sex)
+    , address_(address)
+{}
+
+std::string Person::getPesel() const noexcept
+{
+    return pesel_;
+}
+
+std::string Person::getFirstName() const noexcept
+{
+    return firstName_;
+}
+
+std::string Person::getLastName() const noexcept
+{
+    return lastName_;
+
+}
+
+std::string Person::getSex() const noexcept
+{
+    return sex_;
+}
+ 
+std::string Person::getAddress() const noexcept
+{
+    return address_;
+}
+
+std::string Person::setFirstName(std::string firstname) noexcept
+{
+    firstName_ = firstname;
+}
+
+void Person::setAddress(std::string address) noexcept
+{
+    address_ = address;
+}
+
+bool Person::verifyPesel(std::string pesel)
+{
+    if (pesel.size() != 11) return false;
+    
+    const std::array<int,10> numToCheckPesel = {9,7,3,1,9,7,3,1,9,7};
+    int checkSum = 0;
+    int digit;
+    for(int i = 0; i < 10; i++)
+    {
+        try
+        {
+            digit = pesel[i]-48;
+            checkSum += (digit * numToCheckPesel[i]);
+        }
+        catch(const std::invalid_argument& e)
+        {
+            std::cout << "Invalid argument: " << e.what() << std::endl;
+        }
+        catch(...)
+        {
+            std::cout << "Unknown error" << std::endl;
+        }
+    }
+
+    if(((checkSum%10)+48) == pesel[10]) return true;
+    else return false;
+}
+
+void Person::showPerson() const
+{
+    std::cout << "Pesel: " << getPesel();
+    std::cout << " " << getFirstName();
+    std::cout << " " << getLastName();
+    std::cout << " " << getSex() << std::endl;
+    std::cout << "Address: "; 
+    std::cout << getAddress();
+    std::cout << " Index: " << getIndex();
+    std::cout << " Salary: " << getSalary()<<std::endl;
+    std::cout << "------" << std::endl;
+}
