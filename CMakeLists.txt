@@ -32,7 +32,7 @@ add_compile_options(-c
                     -Woverloaded-virtual
                     -Wuninitialized
                     -pedantic
-                    -pedantic-errors
+                    # -pedantic-errors
                     -g
 )
 
@@ -56,9 +56,10 @@ else (UNIX)
     target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 endif (UNIX)
 
-# set(TEST_SRC_LIST
-#   	tests/test_main.cpp
-# )
-# link_libraries(gtest)
-# add_executable(${PROJECT_NAME}-ut ${TEST_SRC_LIST})
-# target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib)
+set(TEST_SRC_LIST
+  	tests/test_main.cpp
+    tests/personTest.cpp
+)
+link_libraries(gtest)
+add_executable(${PROJECT_NAME}-ut ${TEST_SRC_LIST})
+target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib)

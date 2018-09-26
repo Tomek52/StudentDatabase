@@ -7,6 +7,8 @@
 #include "Student.hpp"
 #include "Employee.hpp"
 #include <exception>
+#include <array>
+#include "ownException.hpp"
 
 using namespace std;
 
@@ -14,12 +16,12 @@ class Database
 {
     vector<Person*> data;
 
-    void loadFromExternalFileShowSwitch(unsigned short int &);
-
 public:
 
     void addToDatabase(Person* s);
     
+    Person* findByPesel(const string & pesel);
+
     void removeStudentByIndex(const unsigned int&);
     void removePersonByPesel(string);
 
@@ -35,12 +37,7 @@ public:
 
     void showByLastName(string);
     void showByPesel(string);
-    void showDatabase();
+    void showDatabase(string message);
 
 };
 
-class OpenFileError : public exception
-{
-public:
-    char* what();
-};

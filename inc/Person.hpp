@@ -3,6 +3,7 @@
 #include <sstream>
 #include <array>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -15,15 +16,19 @@ class Person
         string address_;
     
     public:
-        Person( string pesel, 
-                string firstName, 
-                string lastName, 
-                string sex, 
-                string address);
+        Person( const string& pesel, 
+                const string& firstName, 
+                const string& lastName, 
+                const string& sex, 
+                const string& address);
         
+        Person(const string & packedData);
+        
+        virtual ~Person(){}
+
         virtual unsigned int getIndex() const {return 0;}
         virtual unsigned int getSalary() const {return 0;}
-        virtual void setSalary(unsigned int) = 0;
+        virtual void setSalary(unsigned int){};
         
         string getPesel() const noexcept;
         string getFirstName() const noexcept;
@@ -31,10 +36,10 @@ class Person
         string getSex() const noexcept;
         string getAddress() const noexcept;
         
-        void setFirstName(string) noexcept;
-        void setAddress(string) noexcept;
+        void setFirstName(string& firstName) noexcept;
+        void setAddress(string& address) noexcept;
         
-        bool verifyPesel(string pesel);
-        std::string toString() const noexcept;
+        bool verifyPesel(string& pesel);
+        string toString(char delimeter = ' ') const;
         void showPerson();
 };

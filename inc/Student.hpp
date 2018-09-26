@@ -10,19 +10,16 @@ class Student : public Person
     unsigned int index_;
 
     public:
-    Student(    string pesel, 
-                string firstName, 
-                string lastName, 
-                string sex, 
-                string address, 
+    Student(    const string& pesel, 
+                const string& firstName, 
+                const string& lastName, 
+                const string& sex, 
+                const string& address, 
                 unsigned int index);
 
-    virtual unsigned int getIndex() const;
-    virtual unsigned int getSalary() const;
-    virtual void setSalary(unsigned int);
-    
-    void setIndex(unsigned int);
+    Student(const string & packedData);
 
-    void showStudent() const;
+    unsigned int getIndex() const;
     
+    string toString( char delimeter = ' ') const;
 };

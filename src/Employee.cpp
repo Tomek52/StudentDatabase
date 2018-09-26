@@ -1,19 +1,24 @@
 #include "Employee.hpp"
 
 
-Employee::Employee( string pesel, 
-                    string firstName, 
-                    string lastName, 
-                    string sex, 
-                    string address, 
-                    int salary)
+Employee::Employee( const string& pesel, 
+                    const string& firstName, 
+                    const string& lastName, 
+                    const string& sex, 
+                    const string& address, 
+                    int salary )
     : Person(pesel, firstName, lastName, sex, address)
     , salary_(salary)
 {}
 
+Employee::Employee(const string & packedData)
+    : Person(packedData)
+    , salary_(std::stoi(packedData.substr(92, 7)))
+{}
+
 unsigned int Employee::getSalary() const noexcept
 {
-    return this->salary_;
+    return salary_;
 }
 
 void Employee::setSalary(unsigned int salary) noexcept
@@ -21,7 +26,13 @@ void Employee::setSalary(unsigned int salary) noexcept
     salary_ = salary;
 }
 
-unsigned int Employee::getIndex() const
+string Employee::toString(char delimeter) const
 {
-    return 0;
+    stringstream ss;
+
+    ss  << "Employee: "
+        << Person::toString(delimeter)
+        << setw(7) << getSalary() << " PLN" << endl;
+
+    return ss.str();
 }
