@@ -5,17 +5,6 @@
  os: linux
  compiler: gcc
  
- before_install:
-   # C++17
-   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-   - sudo apt-get update -qq
-   - sudo apt-get install -qq valgrind
- 
- install:
-   # C++17
-   - sudo apt-get install -qq g++-6
-   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
- 
  os:
    - linux
  
@@ -29,4 +18,3 @@
      - cmake ..
      - make
      - ./StudentDatabase
-     - valgrind --leak-check=full --show-leak-kinds=all -v ./StudentDatabase
