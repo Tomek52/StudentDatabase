@@ -1,20 +1,19 @@
- .travis.yml                                                                                                                                    
- launguage: cpp
- dist: trusty
- sudo: require
- os: linux
- compiler: gcc
+launguage: cpp
+dist: trusty
+sudo: require
+os: linux
+compiler: gcc
  
- os:
-   - linux
+os:
+- linux
  
- compiler:
-   - g++
-   - clang
+compiler:
+- g++
+- clang
  
- script:
-     - mkdir build
-     - cd build
-     - cmake ..
-     - make
-     - ./StudentDatabase
+script:
+- mkdir build
+- cd build
+- cmake ..
+- make
+- ./StudentDatabase
