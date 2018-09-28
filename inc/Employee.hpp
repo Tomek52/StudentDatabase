@@ -22,5 +22,5 @@ class Employee : public Person
         unsigned int getSalary() const noexcept;
         void setSalary(unsigned int) noexcept;
         
-        string toString(char delimeter = ' ') const;
+        string toString(char delimeter = ' ') const override;
 };

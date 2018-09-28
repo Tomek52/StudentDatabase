@@ -142,7 +142,12 @@ void Database::showDatabase(string message)
     cout << "___DATABASE___" << message << "___" << endl;
     for(const auto &person: data)
     {
-        person->showPerson();
-        cout << endl;
+        cout << person->toString();
     }
+    cout << endl;
+}
+
+void Database::clearDatabase()
+{
+    data.clear();
 }

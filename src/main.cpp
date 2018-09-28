@@ -6,29 +6,59 @@ int main()
 {
     Database db;
 
-    Person* jan = new Student("Jan",
-                              "Kowalski",
-                              "90031112275",
+    db.loadFromExternalFile();
+
+    Person* jan = new Employee("Karl",
+                              "A. Lucero",
+                              "52102885074",
                               "M",
-                              "ul. Wroblewskiego 12, 51-627 Wroclaw",
-                              123456);
-    Person* ala = new Employee("Ala",
-                               "Kowalska",
-                               "70031112275",
+                              "ul. Gościnna 62, 15-157 Białystok",
+                              8652);
+    Person* ala = new Student("Elizabeth",
+                               "Garner",
+                               "95050360680",
                                "F",
-                               "plac Wroblewskiego 13, 50-626 Wroclaw",
-                               5000);
-    Person* mietek = new Employee("Mietek",
-                                  "Kowalski",
-                                  "80031112275",
-                                  "M",
-                                  "ul. Wroblewskiego 13, 51-627 Wroclaw",
-                                  5500);
+                               "ul. Głogowska 142, 60-205 Poznań ",
+                               566854);
+    Person* mietek = new Employee("Zofia",
+                                  "Kozłowska",
+                                  "70071525142",
+                                  "F",
+                                  "ul. 1 Maja 112, 19-335 Prostki ",
+                                  3200);
     
     db.addToDatabase(jan);
     db.addToDatabase(ala);
     db.addToDatabase(mietek);
     db.showDatabase("Example Added");
+
+    db.sortByIndex(); 
+    db.showDatabase(" Sorted data by Index ");
+
+    db.sortByLastName();
+    db.showDatabase(" Sorted data by Last Name ");
+
+    db.sortBySalary();
+    db.showDatabase(" Sorted by salary ");
+
+    db.modifySalaryByPesel(7200, "80031112275");
+    db.modifyAddressByPesel(" Wieczorowa 22B/5, Warszawa", "80031112275");
+    db.showDatabase(" Modified Salary and Address ");
+
+    cout << "Show by last name: ";
+    db.showByLastName("A. Lucero");
+    cout << "Show By pesel: ";
+    db.showByPesel("70071525142");
+
+    db.clearDatabase();
+    db.showDatabase(" Clear DataBase ");
+
+    db.addToExternalFile();
+    cout << " Added to database " << endl;
+
+
+
+
 
     return 0;
 }

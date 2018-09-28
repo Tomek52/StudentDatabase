@@ -21,5 +21,5 @@ class Student : public Person
 
     unsigned int getIndex() const;
     
-    string toString( char delimeter = ' ') const;
+    string toString( char delimeter = ' ') const override;
 };

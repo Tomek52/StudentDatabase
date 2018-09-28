@@ -40,6 +40,6 @@ class Person
         void setAddress(string& address) noexcept;
         
         bool verifyPesel(string& pesel);
-        string toString(char delimeter = ' ') const;
+        virtual string toString(char delimeter = ' ') const;
         void showPerson();
 };

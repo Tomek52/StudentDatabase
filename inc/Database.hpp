@@ -39,5 +39,7 @@ public:
     void showByPesel(string);
     void showDatabase(string message);
 
+    void clearDatabase();
+
 };
 
