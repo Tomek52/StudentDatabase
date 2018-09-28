@@ -56,9 +56,9 @@ int main()
     db.addToExternalFile();
     cout << " Added to database " << endl;
 
-
-
-
+    delete jan;
+    delete ala;
+    delete mietek;
 
     return 0;
 }
