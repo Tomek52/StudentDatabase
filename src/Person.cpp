@@ -1,9 +1,9 @@
 #include "Person.hpp"
 
 
-Person::Person( const string& firstName, 
+Person::Person( const string& pesel,
+                const string& firstName, 
                 const string& lastName, 
-                const string& pesel,
                 const string& sex, 
                 const string& address)
     : pesel_(pesel)

@@ -8,28 +8,28 @@ int main()
 
     db.loadFromExternalFile();
 
-    Person* jan = new Employee("Karl",
+    Person* em1 = new Employee("52102885074",
+                              "Karl",
                               "A. Lucero",
-                              "52102885074",
                               "M",
                               "ul. Gościnna 62, 15-157 Białystok",
                               8652);
-    Person* ala = new Student("Elizabeth",
+    Person* st1 = new Student( "95050360680",
+                               "Elizabeth",
                                "Garner",
-                               "95050360680",
                                "F",
                                "ul. Głogowska 142, 60-205 Poznań ",
                                566854);
-    Person* mietek = new Employee("Zofia",
+    Person* em2 = new Employee("70071525142",
+                                  "Zofia",
                                   "Kozłowska",
-                                  "70071525142",
                                   "F",
                                   "ul. 1 Maja 112, 19-335 Prostki ",
                                   3200);
     
-    db.addToDatabase(jan);
-    db.addToDatabase(ala);
-    db.addToDatabase(mietek);
+    db.addToDatabase(em1);
+    db.addToDatabase(st1);
+    db.addToDatabase(em2);
     db.showDatabase("Example Added");
 
     db.sortByIndex(); 
@@ -56,9 +56,9 @@ int main()
     db.addToExternalFile();
     cout << " Added to database " << endl;
 
-    delete jan;
-    delete ala;
-    delete mietek;
+    delete st1;
+    delete em1;
+    delete em2;
 
     return 0;
 }
