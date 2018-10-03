@@ -66,3 +66,17 @@ TEST_F(testPerson, modify_Salary_By_Pesel)
     //THEN
     ASSERT_EQ(em2->getSalary(), 2250);
 }
+
+TEST_F(testPerson, clear_database)
+{
+    //WHEN
+    Database db;
+    db.addToDatabase(st1);
+    db.addToDatabase(st2);
+    db.addToDatabase(em1);
+    db.addToDatabase(em2);
+    ASSERT_EQ(db.getSize(), 4);
+    //THEN
+    db.clearDatabase();
+    ASSERT_EQ(db.getSize(), 0);
+}

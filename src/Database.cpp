@@ -151,3 +151,8 @@ void Database::clearDatabase()
 {
     data.clear();
 }
+
+int Database::getSize()
+{
+    return (int)data.size();
+}

@@ -41,5 +41,7 @@ public:
 
     void clearDatabase();
 
+    int getSize();
+
 };
 
